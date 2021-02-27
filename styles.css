@@ -1,1 +1,190 @@
-styles.css
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html,
+body,
+.wrapper {
+  height: 100%;
+}
+
+html, 
+body,
+ul, 
+a {
+    margin: 0;
+    padding: 0;
+    color: #333333;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+ul {
+    list-style: none;
+    list-style-image: none;
+}
+
+h1,
+h2 {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0;
+}
+
+h1 {
+    width: 512px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+.header,
+.footer {
+  flex-shrink: 0;
+}
+
+.header {
+  background-color: #fff;
+  position: relative;
+  font-size: 14px;
+  overflow: hidden;
+  background: url(./img/header-bg.png) repeat;
+}
+
+.header .container {
+  position: relative;
+  padding: 30px 0 130px;
+}
+
+.header-top {
+  margin-bottom: 120px;
+  display: flex;
+  white-space: nowrap;
+}
+
+.logo {
+    font-size:24px;
+    font-weight: bold;
+    margin-right: 136px;
+}
+
+nav ul {
+    list-style: none;
+    list-style-image: none;
+    display: flex;
+}
+
+nav ul>li>a {
+    padding-right: 28px;    
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 29px;
+}
+
+nav ul>li>a:hover {
+    color: #00BF78;
+}
+
+.header .contacts {
+    text-align: right;
+}
+
+.header .contacts .phone {
+    font-size: 18px;
+    line-height: 29px;
+    font-weight: 500;
+}
+
+.header .contacts .work-time {
+    font-size: 11px;
+} 
+
+.header .social {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header .social li {
+    margin-bottom: 20px;
+}
+
+.header p {
+    font-size: 20px;
+    margin-bottom: 60px;
+    z-index: 2;
+}
+
+.header .btn {
+    background: #FB9475;
+    border-radius: 24px;
+    border: none;
+    height: 48px;
+    width: 203px;
+    color: #fff;
+    z-index: 2;
+}
+
+.header-girl {
+  position: absolute;
+  right: 90px;
+  bottom: 0;
+  max-width: 524px;
+  width: 100%;
+}
+
+.header-girl:before {
+  content: '';
+  width: 472px;
+  height: 472px;
+  background-color: #FB9475;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -110px;
+  right: 0;
+  z-index: 0;
+}
+
+.header-girl img {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.section {
+  padding: 50px 0;
+}
+
+.about {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-descr {
+  max-width: 568px;
+  width: 100%;
+}
+
+.about-video {
+  max-width: 442px;
+  width: 100%;
+}
+
+.footer nav {
+    font-size: 12px;
+}
