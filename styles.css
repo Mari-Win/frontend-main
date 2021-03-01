@@ -186,6 +186,10 @@ nav ul>li>a:hover {
     z-index: 2;
 }
 
+.btn:hover {
+    background: #fd6f45;
+}
+
 .header-girl {
   position: absolute;
   right: 90px;
