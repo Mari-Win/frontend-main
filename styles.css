@@ -37,7 +37,6 @@ ul {
 h1,
 h2 {
   font-size: 48px;
-  line-height: 59px;
   font-weight: bold;
   margin: 0;
 }
@@ -46,12 +45,10 @@ h3 {
     font-style: normal;
     font-weight: bold;
     font-size: 36px;
-    line-height: 44px;
 }
 
 h4 {
     font-size: 18px;
-    line-height: 22px;
 }
 
 .row, 
@@ -96,6 +93,7 @@ h1 {
   font-size: 14px;
   overflow: hidden;
   background: url(./img/header-bg.png) repeat;
+  margin-bottom: 100px;
 }
 
 .header .container {
@@ -123,19 +121,38 @@ h1 {
     margin-right: 136px;
 }
 
-nav ul {
+/*
+* NAVIGATION
+*/
+
+.navigation {
     list-style: none;
     list-style-image: none;
-    display: flex;
-}
-
-nav ul>li>a {
-    padding-right: 28px;    
-    font-size: 14px;
-    line-height: 29px;
+    display: flex;    
 }
 
 nav ul>li>a:hover {
+    color: #00BF78;
+}
+
+.navigation__link {
+    font-size: 14px;
+    line-height: 17.07px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.navigation__item {
+    margin-right: 28px;    
+    font-size: 14px;
+    padding-bottom: 6px;
+}
+
+.navigation__item-active {
+    border-bottom: 2px solid #00BF78;    
+}
+
+.navigation__item-active .navigation__link {  
     color: #00BF78;
 }
 
@@ -180,6 +197,13 @@ nav ul>li>a:hover {
     border: none;
     height: 48px;
     color: #fff;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+
+.btn-small {
+    font-size: 12px;
 }
 
 .header .btn {
@@ -219,7 +243,7 @@ nav ul>li>a:hover {
 }
 
 .section {
-  padding: 50px 0;
+  margin-bottom: 100px;
 }
 
 .main h2 {
@@ -307,6 +331,9 @@ h3 {
     margin-bottom: 34px;
 }
 
+/*
+* POPULAR
+*/
 .popular {
     display: flex;
     flex-flow: wrap;
@@ -314,44 +341,105 @@ h3 {
     align-content: flex-start;
 }
 
-.popular p {
+.pop-item__descr {
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
     line-height: 20px;
+    margin-bottom: 16px;
 }
 
-.popular .btn {
-    font-size: 12px;
-    line-height: 14px;
+.pop-item__btn {
     height: 34px;
     padding: 0 20px;
 }
 
-.popular-img {
+.pop-item__img {
     margin-bottom: 20px;
     width: 350px;
     height: 180px;
     border-radius: 8px;
 }
 
-.popular h4 {
+.pop-item__header {
     margin-bottom: 8px;
 }
 
-.popular p {
-    margin-bottom: 16px;
-}
-
-.popular .pop-item {
+.popular__item {
     margin-bottom: 48px;
     width: min-content;
     min-width: 350px;
 }
 
-.popular .last-item {
+.popular__item_empty {
     height: 1px;
 }
+
+/*
+* PRICE
+*/
+
+.price-section__items {
+    display: flex;    
+    flex-flow: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    padding-right: 92px;
+}
+
+.price__item {
+    max-width: 444px;
+    width: 100%;
+    margin-bottom: 36px;
+}
+
+.price__name {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;   
+    margin-bottom: 8px; 
+    white-space: nowrap;
+}
+
+.price__addition {
+    font-size: 14px;
+}
+
+.price__cost {
+    font-size: 20px;
+    font-weight: 600;
+    color: #00BF78;    
+    text-align: end;
+}
+
+.price__nav {
+    margin-bottom: 50px;
+}
+
+/*
+* EMPLOYEES
+*/
+.masters__foto {
+    margin-bottom: 20px;
+    width: 255px;
+    padding-top: 200px;
+    height: 300px;
+    border-radius: 8px;
+    text-align: center;    
+}
+
+.masters__foto-1 {
+    background: url(/img/photo1.jpg) no-repeat;
+}
+
+.masters__link {
+    /*display: none;*/
+    color: #fff;    
+}
+
+/*
+* FOOTER
+*/
 
 .footer, 
 .footer a {
@@ -375,7 +463,12 @@ h3 {
     justify-content: flex-end;
 }
 
-.footer nav ul>li>a {
+.footer .navigation__link {
+    font-size: 12px;
+}
+
+/*.footer nav ul>li>a {
     padding-right: 0;
     padding-left: 28px;
-}
+}*/
+
