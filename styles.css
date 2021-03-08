@@ -148,11 +148,11 @@ nav ul>li>a:hover {
     padding-bottom: 6px;
 }
 
-.navigation__item-active {
+.navigation__item_active {
     border-bottom: 2px solid #00BF78;    
 }
 
-.navigation__item-active .navigation__link {  
+.navigation__item_active .navigation__link {  
     color: #00BF78;
 }
 
@@ -244,6 +244,19 @@ nav ul>li>a:hover {
 
 .section {
   margin-bottom: 100px;
+}
+
+.section_mbot52 {
+    margin-bottom: 52px;
+}
+
+.section_mbot64 {
+    margin-bottom: 64px;
+}
+
+.section_grey {
+    background: #F8F6F7;
+    ;
 }
 
 .main h2 {
@@ -379,7 +392,7 @@ h3 {
 * PRICE
 */
 
-.price-section__items {
+.pricelist__items {
     display: flex;    
     flex-flow: wrap;
     justify-content: space-between;
@@ -412,29 +425,115 @@ h3 {
     text-align: end;
 }
 
-.price__nav {
+.pricelist__nav {
     margin-bottom: 50px;
 }
 
 /*
 * EMPLOYEES
 */
-.masters__foto {
+.main__masters {
+    padding: 80px 0 60px;
+}
+
+.masters__descr {    
+    margin-bottom: 24px;
+}
+
+.masters__item {
+    padding-right: 20px;
     margin-bottom: 20px;
-    width: 255px;
+    max-width: 255px;
+}
+
+
+.master-card__foto {
+    margin-bottom: 20px;    
     padding-top: 200px;
     height: 300px;
     border-radius: 8px;
     text-align: center;    
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
 }
 
-.masters__foto-1 {
+.master-card__foto::before {
+    content:'';
+    left: 0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    position: absolute;
+    background: #000;
+    opacity: 0;
+    transition: 0.3s opacity;
+    z-index: 1;
+}
+
+.master-card__foto:hover:before {
+    opacity: 0.5;   
+}
+
+.master-card__foto:after {
+    content: 'Записаться к мастеру';
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff; 
+    max-width: 120px;
+    top:0;
+    bottom: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    opacity: 0;
+    transition: 0.3s opacity;
+}
+
+.master-card__foto:hover:after {
+    opacity: 1;   
+}
+
+.master-card__foto-1 {
     background: url(/img/photo1.jpg) no-repeat;
+    
 }
 
-.masters__link {
-    /*display: none;*/
-    color: #fff;    
+.master-card__foto-2 {
+    background: url(/img/photo2.jpg) no-repeat;
+    background-size:cover;
+}
+
+.master-card__foto-3 {
+    background: url(/img/photo3.jpg) no-repeat;
+}
+
+.master-card__foto-4 {
+    background: url(/img/photo4.png) no-repeat;
+}
+
+.master-card__name{
+    font-size:18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.master-card__descr {
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.master-card__experience {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 400;    
 }
 
 /*
