@@ -126,7 +126,7 @@ h1 {
 .logo {
     font-size:24px;
     font-weight: bold;
-    margin-right: 136px;
+   /* margin-right: 136px;*/
 }
 
 /*
@@ -150,10 +150,13 @@ nav ul>li>a:hover {
     white-space: nowrap;
 }
 
-.navigation__item {
-    margin-right: 28px;    
+.navigation__item{
     font-size: 14px;
     padding-bottom: 6px;
+}
+
+.navigation__item:not(:last-child) {
+    margin-right: 28px;    
 }
 
 .navigation__item_active {
@@ -608,6 +611,10 @@ h3 {
     .wrapper {
         max-width: 768px;
     }
+
+    .container{
+        max-width: 700px;
+    }
     
     .header {
         margin-bottom: 50px;
@@ -617,7 +624,15 @@ h3 {
         padding-bottom: 36px;
     }
 
-    .header .navigation {
+    .header-top {
+        margin-bottom: 50px;
+    }
+
+    .header .logo {
+        margin-right: 0;
+    }
+
+    .header nav {
         display: none;
     } 
     
@@ -635,7 +650,8 @@ h3 {
     }    
     
     h1 {
-        width: 512px;        
+        width: 100%;
+        font-size: 2.6em;        
         margin: 0 auto;
     }
 
@@ -666,6 +682,7 @@ h3 {
     .navigation-humb{
         display: flex;
         width: 36px;
+        max-width: 36px;
         height: 46px;
         position: relative;
         margin: 4px 8px;
@@ -735,15 +752,100 @@ h3 {
 } 
 
 /* Extra Small Devices, Phones */ 
+@media only screen and (min-width: 480px) and (max-width: 576px) { 
+    .navigation-humb {
+        position: absolute;
+        left: 10px;
+    }
+
+    .header-top {
+        text-align: center;
+    }
+
+    .header .contacts {
+        text-align: center;
+        padding-top: 10px;
+    }
+}
+
+/* Extra Small Devices, Phones */ 
 @media only screen and (max-width: 480px) { 
     .wrapper {
         max-width: 480px;
+    }
+
+    .container{
+        max-width: 400px;
+    }
+
+    .header-top {
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+
+    .navigation-humb {
+        position: absolute;
+        left: 10px;
+    }
+
+    .header .logo {
+        display: block;
+        text-align: center;
+    }
+
+    .header .navigation {
+        display: none;
+    } 
+
+    .header .contacts {
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        width: auto;
+        margin-bottom: 10px;
     }
 } 
 
 /* Custom, iPhone Retina */ 
 @media only screen and (max-width: 320px) { 
     .wrapper {
-        max-width: 320px;
+        max-width: 347px;
+    }
+
+    .container{
+        max-width: 300px;
+    }
+
+    .header-top {
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+
+    .navigation-humb {
+        position: absolute;
+        left: 10px;
+    }
+
+    .header .logo {
+        display: block;
+        text-align: center;
+    }
+
+    .header .navigation {
+        display: none;
+    } 
+
+    .header .contacts {
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        width: auto;
+        margin-bottom: 10px;
     }
 }
