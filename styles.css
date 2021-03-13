@@ -212,7 +212,7 @@ nav ul>li>a:hover {
 }
 
 
-.btn-small {
+.btn_small {
     font-size: 12px;
 }
 
@@ -382,6 +382,7 @@ h3 {
     width: 350px;
     height: 180px;
     border-radius: 8px;
+    object-fit: cover;
 }
 
 .pop-item__header {
@@ -436,7 +437,11 @@ h3 {
 }
 
 .pricelist__nav {
-    margin-bottom: 50px;
+    margin-bottom: 50px;    
+}
+
+.pricelist__nav .navigation {
+    justify-content: left;
 }
 
 /*
@@ -462,7 +467,6 @@ h3 {
 
 .master-card__foto {
     margin-bottom: 20px;    
-    padding-top: 200px;
     height: 300px;
     border-radius: 8px;
     text-align: center;    
@@ -471,6 +475,10 @@ h3 {
     position: relative;
     overflow: hidden;
     min-width: 255px;
+}
+
+.master-card__img {
+    width: 100%;
 }
 
 .master-card__foto::before {
@@ -512,24 +520,6 @@ h3 {
 
 .master-card__foto:hover:after {
     opacity: 1;   
-}
-
-.master-card__foto-1 {
-    background: url(/img/photo1.jpg) no-repeat;
-    
-}
-
-.master-card__foto-2 {
-    background: url(/img/photo2.jpg) no-repeat;
-    background-size:cover;
-}
-
-.master-card__foto-3 {
-    background: url(/img/photo3.jpg) no-repeat;
-}
-
-.master-card__foto-4 {
-    background: url(/img/photo4.png) no-repeat;
 }
 
 .master-card__name{
@@ -580,10 +570,6 @@ h3 {
     font-size: 12px;
 }
 
-/*.footer nav ul>li>a {
-    padding-right: 0;
-    padding-left: 28px;
-}*/
 
 /* Medium Devices, Desktops */ 
 @media only screen and (max-width: 992px) {     
@@ -753,22 +739,6 @@ h3 {
       }
       
 } 
-
-/* Extra Small Devices, Phones */ 
-@media only screen and (min-width: 480px) and (max-width: 576px) { 
-    /*.navigation-humb {
-        position: absolute;
-        left: 10px;
-    }*/
-
-    /*.header-top {
-        text-align: center;
-    }*/
-
-   /* .header .contacts {
-        text-align: center;
-    }*/
-}
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width: 480px) { 
