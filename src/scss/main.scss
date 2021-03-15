@@ -1,0 +1,184 @@
+$img-path: "/img";
+
+@import "libs";
+@import "components/index";
+@import "layout/index";
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+    .wrapper {
+        max-width: 992px;
+    }
+
+    .container {
+        max-width: 900px;
+    }
+
+    .header-girl {
+        opacity: 0.5;
+    }
+
+    .navigation__item:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    .pricelist__nav .navigation {
+        flex-direction: column;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+    .wrapper {
+        max-width: 768px;
+    }
+
+    .container {
+        max-width: 700px;
+    }
+
+    .header {
+        margin-bottom: 50px;
+    }
+
+    .header .container {
+        padding-bottom: 36px;
+    }
+
+    .header-top {
+        margin-bottom: 50px;
+    }
+
+    .header .logo {
+        margin-right: 0;
+    }
+
+    .header nav .navigation {
+        display: none;
+    }
+
+    .header-girl {
+        display: none;
+    }
+
+    .header .hero {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin: 0 auto 39px;
+        padding: 0;
+    }
+
+    h1 {
+        width: 100%;
+        font-size: 3em;
+        margin: 0 auto;
+    }
+
+    .header .btn {
+        margin: 0 auto;
+    }
+
+    .header .social {
+        position: relative;
+        transform: none;
+        flex-direction: row;
+        display: flex;
+        justify-content: center;
+    }
+
+    .header .social .social__item:not(:last-child) {
+        margin-right: 36px;
+    }
+
+    .navigation-humb {
+        display: flex;
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+    .wrapper {
+        max-width: 480px;
+    }
+
+    .container {
+        max-width: 400px;
+    }
+
+    .header-top {
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+
+    .header nav {
+        display: none;
+    }
+
+    .navigation-humb {
+        position: absolute;
+        left: 10px;
+    }
+
+    .header .logo {
+        display: block;
+        text-align: center;
+        padding: 0 56px;
+        margin-bottom: 10px;
+    }
+
+    .header .navigation {
+        display: none;
+    }
+
+    .header .contacts {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        width: auto;
+        margin-bottom: 10px;
+    }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+    .wrapper {
+        max-width: 347px;
+    }
+
+    .container {
+        max-width: 300px;
+    }
+
+    .header-top {
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+
+    .navigation-humb {
+        position: absolute;
+        left: 10px;
+    }
+
+    .header .logo {
+        display: block;
+        text-align: center;
+    }
+
+    .header .navigation {
+        display: none;
+    }
+
+    .header .contacts {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        width: auto;
+        margin-bottom: 10px;
+    }
+}
