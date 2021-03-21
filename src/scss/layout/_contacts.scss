@@ -1,6 +1,9 @@
 .contacts {
     background-color: #F8F6F7;
     padding: 40px 0;
+    .row {
+        align-items: center;
+    }
 
     &__addr, 
     &__phone {
@@ -29,5 +32,10 @@
     
     &__social .social__item:not(:last-child) {
         margin-right: 28px;
+    }
+
+    &__signupform {
+        max-width: 445px;
+        justify-content: center;        
     }
 } 

@@ -74,7 +74,8 @@
       
                   <div class="about-video col-sm">
                     <div class="about-video__play">                    
-                      <p>Короткое видео о нас</p>                                            
+                      <p>Короткое видео о нас</p> 
+                      <!--iframe width="560" height="315" src="https://www.youtube.com/embed/aUjNoszPSh0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe-->
                     </div>                                                        
                   </div>
                 </div>
@@ -147,7 +148,7 @@
       
             <section class="section pricelist section_mbot64">
               <div class="container">
-                <h3>Услуги и цены</h3>
+                <h2>Услуги и цены</h2>
                 <nav class="pricelist__nav">
                   <ul class="navigation">
                       <li class="navigation__item navigation__item_active">
@@ -233,7 +234,7 @@
 
             <section class="section masters section_grey main__masters">
               <div class="container">
-                <h3>Мастера</h3>
+                <h2>Мастера</h2>
                 <p class="masters__descr">Дружная команда настоящих профессионалов</p>
                 <div class="row">
                   <div class="master-card masters__item col-sm">
@@ -275,7 +276,7 @@
 
             <section class="section works main__works">
               <div class="container">
-                <h3>Наши работы</h3>
+                <h2>Наши работы</h2>
                 <nav>
                 <div class="works__navbtns navbtns">
                   <a class="navbtns__prev" href="#">prev</a>
@@ -292,16 +293,27 @@
                   </div>                 
                 </div>           
             </section>
-
+            <section class="section">
+              <div class="container brands">
+                <p class="brands__text">Бренды, которые мы используем в работе</p>
+                <div class="row brands__container">
+                  <img src="./img/wella.png" alt="Wella" title="Wella" class="brands__img">
+                  <img src="./img/shwarz.png" alt="Shwarzkopf"  title="Shwarzkopf" class="brands__img">
+                  <img src="./img/tigi.png" alt="TIGI" title="TIGI" class="brands__img">
+                  <img src="./img/londa.png" alt="Londa"  title="Londa" class="brands__img">
+                  <img src="./img/nioxin.png" alt="Nioxin" title="Nioxin" class="brands__img">
+                </div>                
+              </div>
+            </section>
             <section class="section contacts">
               <div class="container">
                 <div class="row">
                   <div class="col">
-                    <h3>Контакты</h3>
+                    <h2>Контакты</h2>
                     <div class="contacts__text">
                       <p class="contacts__addr">Томск, проспект Ленина, дом 13</p>
                       <p class="contacts__phone phone"><a href="tel:+74996861762" title="Позвоните нам">8 (499) 686-17-62</a></p>
-                      <p class="contacts__email"><a href="mailto:vlad@htmlbook.ru?subject=Записаться к мастеру">info@more-krasoty.ru</a></p>
+                      <p class="contacts__email"><a href="mailto:info@more-krasoty.ru?subject=Записаться к мастеру">info@more-krasoty.ru</a></p>
                       <p class="contacts__social-text">Мы в социальных сетях</p>
                     </div>
                     <ul class="contacts__social social">
@@ -310,14 +322,22 @@
                       <li class="social__item"><a href="#"><img src="./img/youtube.png" title="Youtube"></a></li>
                     </ul>
                   </div>
-                  <div class="col contacts__signup">
+                  <div class="col contacts__signupform">
                     <div class="signupform">
+                      <h5 class="signupform__title">Быстрая запись</h5>
+                      <p class="signupform__text">Наш менеджер перезвонит в течение нескольких минут, уточнит подробности и согласует время.
+                      </p>
+                      <input class="signupform__input" required size="25" placeholder="Ваше имя"/>
+                      <input class="signupform__input" required size="15" placeholder="+7 (___) ___-__-__" pattern="+7(___)___-__-__"/>
+                      <button class="btn signupform__btn">Записаться</button>
+                      <p class="small-text">Нажимая на кнопку вы соглашаетесь с <a href="#">обработкой персональных данных</a></p>
   
                     </div>
                   </div>                                 
                 </div>                
               </div>           
             </section>
+            
           </main>
       
           <footer class="footer">
