@@ -23,7 +23,6 @@
 .master-card {
     &__foto {
         margin-bottom: 20px;
-        padding-top: 200px;
         height: 300px;
         border-radius: 8px;
         text-align: center;
@@ -74,21 +73,8 @@
         opacity: 1;
     }
 
-    &__foto-1 {
-        background: url(#{$img-path}/photo1.jpg) no-repeat;
-    }
-
-    &__foto-2 {
-        background: url(#{$img-path}/photo2.jpg) no-repeat;
-        background-size: cover;
-    }
-
-    &__foto-3 {
-        background: url(#{$img-path}/photo3.jpg) no-repeat;
-    }
-
-    &__foto-4 {
-        background: url(#{$img-path}/photo4.png) no-repeat;
+    &__img {
+        width:100%;
     }
 
     &__name {

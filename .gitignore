@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 /node_modules
 /dist
 /src/css
 node_modules
 dist
 scr/css
+=======
+node_modules
+dist
+src/css
+>>>>>>> master
