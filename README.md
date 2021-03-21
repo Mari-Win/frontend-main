@@ -1,4 +1,5 @@
 ### автор Почивалова Марина
-#### https://github.com/marinaghb/frontend-main
+
+#### [Мир красоты (учебный сайт)](https://infallible-euler-f1f1e5.netlify.app/ "Мир красоты (учебный сайт)")
 
 ##### frontend Rubius курсы
