@@ -1,0 +1,38 @@
+/*
+* NAVIGATION
+*/
+
+.navigation {
+    list-style: none;
+    list-style-image: none;
+    display: flex;
+    justify-content: center;
+
+    &__link {
+        font-size: 14px;
+        line-height: 17.07px;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    &__link:hover {
+        color: #00bf78;
+    }
+
+    &__item {
+        font-size: 14px;
+        padding-bottom: 6px;
+    }
+
+    &__item:not(:last-child) {
+        margin-right: 28px;
+    }
+
+    &__item_active {
+        border-bottom: 2px solid #00bf78;
+    }
+
+    &__item_active &__link {
+        color: #00bf78;
+    }
+}

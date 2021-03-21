@@ -1,0 +1,82 @@
+.about {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+
+    &-descr {
+        max-width: 568px;
+        width: 100%;
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    &-descr p {
+        margin-bottom: 16px;
+    }
+
+    &-descr .short-descr {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    &-descr a {
+        font-size: 14px;
+        line-height: 17px;
+        color: #278aff;
+    }
+
+    &-video {
+        max-width: 442px;
+        width: 100%;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+            url(#{$img-path}/about_video_img.jpg) no-repeat;
+        background-size: 442px 310px;
+        border-radius: 8px;
+        height: 295px;
+        padding-top: 102px;
+    }
+
+    &-video__play {
+        background: url(#{$img-path}/play_video.png) no-repeat top center;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        text-align: center;
+        padding: 68px 10px 10px;
+    }
+
+    &-descr a {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+.advantages {
+    p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    &__img {
+        max-width: 49px;
+        width: 100%;
+        height: 52px;
+        max-height: 100%;
+        display: inline-block;
+        margin-bottom: 30px;
+        overflow: hidden;
+    }
+
+    h4 {
+        margin-bottom: 12px;
+    }
+
+    img {
+        display: block;
+    }
+
+    .col-sm {
+        text-align: center;
+        padding: 0 46px;
+    }
+}

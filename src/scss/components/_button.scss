@@ -1,0 +1,17 @@
+.btn {
+    background: #fb9475;
+    border-radius: 24px;
+    border: none;    
+    color: #fff;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 17px 30px;
+
+    &_small {
+        font-size: 12px;
+    }
+
+    &:hover {
+        background: #fd6f45;
+    }
+}

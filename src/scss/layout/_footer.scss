@@ -1,0 +1,33 @@
+/*
+* FOOTER
+*/
+
+.footer {
+    flex-shrink: 0;
+
+    &,
+    a {
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .container {
+        padding: 10px 0;
+    }
+
+    .container .row {
+        align-items: center;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    .navigation {
+        justify-content: flex-end;
+    }
+
+    .navigation__link {
+        font-size: 12px;
+    }
+}

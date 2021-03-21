@@ -1,0 +1,45 @@
+/*
+* POPULAR
+*/
+.popular {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+
+    &__item {
+        margin-bottom: 48px;
+        width: min-content;
+        min-width: 350px;
+    }
+
+    &__item_empty {
+        height: 1px;
+    }
+}
+
+.pop-item {
+    &__descr {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 20px;
+        margin-bottom: 16px;
+    }
+
+    &__btn {        
+        padding: 10px 20px;
+    }
+
+    &__img {
+        margin-bottom: 20px;
+        width: 350px;
+        height: 180px;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    &__header {
+        margin-bottom: 8px;
+    }
+}
