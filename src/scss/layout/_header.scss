@@ -55,6 +55,11 @@ $img-path: "/img" !default;
         height: 28px;
     }
 
+    .social li img:hover {
+        cursor: pointer;                        
+        opacity: 0.8;
+    }
+    
     p {
         font-size: 20px;
         line-height: 24px;
@@ -62,8 +67,7 @@ $img-path: "/img" !default;
         z-index: 2;
     }
 
-    .btn {
-        width: 203px;
+    .btn {       
         z-index: 2;
     }
 
