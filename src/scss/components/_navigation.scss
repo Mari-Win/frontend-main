@@ -6,13 +6,14 @@
     list-style: none;
     list-style-image: none;
     display: flex;
-    justify-content: center;
+    justify-content: center;    
 
     &__link {
         font-size: 14px;
         line-height: 17.07px;
         font-weight: 500;
         white-space: nowrap;
+        color: #333333;
     }
 
     &__link:hover {

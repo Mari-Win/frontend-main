@@ -1,0 +1,33 @@
+.contacts {
+    background-color: #F8F6F7;
+    padding: 40px 0;
+
+    &__addr, 
+    &__phone {
+        margin-bottom: 20px;
+    }
+
+    &__email {        
+        margin-bottom: 32px;
+    }
+
+    &__text {        
+        margin-bottom: 14px;
+    }
+
+    &__social-text {
+        font-size: 12px;
+    }
+
+    &__social {
+        position: relative;
+        transform: none;
+        flex-direction: row;
+        display: flex;
+        justify-content: left;
+    }
+    
+    &__social .social__item:not(:last-child) {
+        margin-right: 28px;
+    }
+} 

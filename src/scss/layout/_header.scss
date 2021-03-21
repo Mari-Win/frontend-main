@@ -28,18 +28,18 @@ $img-path: "/img" !default;
         max-width: 512px;
     }
 
-    .contacts {
+    &__contacts {
         text-align: right;
     }
 
-    .contacts .phone {
+    &__contacts .phone {
         font-size: 18px;
         font-weight: 500;
     }
 
-    .contacts .work-time {
+    &__contacts .work-time {
         font-size: 11px;
-    }
+    }    
 
     .social {
         position: absolute;
@@ -48,16 +48,11 @@ $img-path: "/img" !default;
         transform: translateY(-50%);
         flex-direction: column;
         z-index: 1;
-    }
-
-    .social li {
-        margin-bottom: 20px;
-        height: 28px;
-    }
-
-    .social li img:hover {
-        cursor: pointer;                        
-        opacity: 0.8;
+        
+        li {
+            margin-bottom: 20px;
+            height: 28px;
+        }        
     }
     
     p {
@@ -106,5 +101,10 @@ $img-path: "/img" !default;
 .logo {
     font-size: 24px;
     font-weight: bold;
+    color: #333333;
     /* margin-right: 136px;*/
+}
+
+.logo:hover {
+    text-decoration: none;
 }
