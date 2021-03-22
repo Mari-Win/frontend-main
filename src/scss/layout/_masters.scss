@@ -6,6 +6,10 @@
 }
 
 .masters {
+    .row {
+        justify-content: space-between;
+    }
+
     &__descr {
         margin-bottom: 24px;
     }

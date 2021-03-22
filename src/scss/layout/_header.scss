@@ -30,6 +30,7 @@ $img-path: "/img" !default;
 
     &__contacts {
         text-align: right;
+        padding: 0;
     }
 
     &__contacts .phone {
@@ -43,7 +44,7 @@ $img-path: "/img" !default;
 
     .social {
         position: absolute;
-        right: 0;
+        right: 10px;
         top: 50%;
         transform: translateY(-50%);
         flex-direction: column;

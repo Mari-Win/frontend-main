@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-grid.min.css" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./css/main.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src="./js/main.js"></script>
       </head>
       <body>
       
@@ -25,12 +27,12 @@
 
                 <a class="logo col col-sm col-md-auto col-lg-auto" href="/index.html">Мир красоты</a>
                 <nav class="col col-sm col-md col-lg">
-                  <ul class="navigation">
-                      <li class="navigation__item"><a href="#" class="navigation__link">Услуги и цены</a></li>
-                      <li class="navigation__item"><a href="#" class="navigation__link">Мастера</a></li>
-                      <li class="navigation__item"><a href="#" class="navigation__link">Наши работы</a></li>
-                      <li class="navigation__item"><a href="#" class="navigation__link">О нас</a></li>
-                      <li class="navigation__item"><a href="#" class="navigation__link">Контакты</a></li>
+                  <ul class="navigation" id="navigation-top">
+                      <li class="navigation__item"><a href="#price" class="navigation__link">Услуги и цены</a></li>
+                      <li class="navigation__item"><a href="#masters" class="navigation__link">Мастера</a></li>
+                      <li class="navigation__item"><a href="#works" class="navigation__link">Наши работы</a></li>
+                      <li class="navigation__item"><a href="#about" class="navigation__link">О нас</a></li>
+                      <li class="navigation__item"><a href="#contacts" class="navigation__link">Контакты</a></li>
                   </ul>
                 </nav>
                 <div class="header__contacts col col-sm-auto col-md-auto col-lg-auto">
@@ -60,7 +62,7 @@
           </header>
       
           <main class="main">
-            <section class="section">
+            <section class="section" id="about">
               <div class="container">
                 <h2>О салоне</h2>
       
@@ -146,7 +148,7 @@
               </div>
             </section>
       
-            <section class="section pricelist section_mbot64">
+            <section class="section pricelist section_mbot64" id="price">
               <div class="container">
                 <h2>Услуги и цены</h2>
                 <nav class="pricelist__nav">
@@ -232,7 +234,7 @@
               </div>
             </section>
 
-            <section class="section masters section_grey main__masters">
+            <section class="section masters section_grey main__masters" id="masters">
               <div class="container">
                 <h2>Мастера</h2>
                 <p class="masters__descr">Дружная команда настоящих профессионалов</p>
@@ -274,13 +276,13 @@
               </div>
             </section>
 
-            <section class="section works main__works">
-              <div class="container">
+            <section class="section" id="works">
+              <div class="container works main__works">
                 <h2>Наши работы</h2>
                 <nav>
                 <div class="works__navbtns navbtns">
-                  <a class="navbtns__prev" href="#">prev</a>
-                  <a class="navbtns__next" href="#">next</a>
+                  <a class="navbtns__prev" href="#"></a>
+                  <a class="navbtns__next" href="#"></a>
                 </div>
                 </nav>
               </div>                                                 
@@ -297,15 +299,25 @@
               <div class="container brands">
                 <p class="brands__text">Бренды, которые мы используем в работе</p>
                 <div class="row brands__container">
-                  <img src="./img/wella.png" alt="Wella" title="Wella" class="brands__img">
-                  <img src="./img/shwarz.png" alt="Shwarzkopf"  title="Shwarzkopf" class="brands__img">
-                  <img src="./img/tigi.png" alt="TIGI" title="TIGI" class="brands__img">
-                  <img src="./img/londa.png" alt="Londa"  title="Londa" class="brands__img">
-                  <img src="./img/nioxin.png" alt="Nioxin" title="Nioxin" class="brands__img">
+                  <div class="col">
+                    <img src="./img/wella.png" alt="Wella" title="Wella" class="brands__img" />
+                  </div>
+                  <div class="col">
+                    <img src="./img/shwarz.png" alt="Shwarzkopf"  title="Shwarzkopf" class="brands__img">
+                  </div>
+                  <div class="col">
+                    <img src="./img/tigi.png" alt="TIGI" title="TIGI" class="brands__img">
+                  </div>
+                  <div class="col">
+                    <img src="./img/londa.png" alt="Londa"  title="Londa" class="brands__img">  
+                  </div>
+                  <div class="col">
+                    <img src="./img/nioxin.png" alt="Nioxin" title="Nioxin" class="brands__img">  
+                  </div>                                                                      
                 </div>                
               </div>
             </section>
-            <section class="section contacts">
+            <section class="section contacts" id="contacts">
               <div class="container">
                 <div class="row">
                   <div class="col">
@@ -322,14 +334,14 @@
                       <li class="social__item"><a href="#"><img src="./img/youtube.png" title="Youtube"></a></li>
                     </ul>
                   </div>
-                  <div class="col contacts__signupform">
-                    <div class="signupform">
+                  <div class="col">
+                    <div class="signupform  contacts__signupform">
                       <h5 class="signupform__title">Быстрая запись</h5>
                       <p class="signupform__text">Наш менеджер перезвонит в течение нескольких минут, уточнит подробности и согласует время.
                       </p>
-                      <input class="signupform__input" required size="25" placeholder="Ваше имя"/>
-                      <input class="signupform__input" required size="15" placeholder="+7 (___) ___-__-__" pattern="+7(___)___-__-__"/>
-                      <button class="btn signupform__btn">Записаться</button>
+                      <input class="signupform__input" type="text" required maxlength="25" minlength="3" placeholder="Ваше имя" title="Введите Ваше имя"/>
+                      <input class="signupform__input" type="tel"  required maxlength="15" minlength="5" placeholder="+7 (___) ___-__-__" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" title="Введите Ваш номер телефона"/>
+                      <button class="btn signupform__btn" type="submit">Записаться</button>
                       <p class="small-text">Нажимая на кнопку вы соглашаетесь с <a href="#">обработкой персональных данных</a></p>
   
                     </div>
@@ -348,25 +360,24 @@
                         <p><a href="#">Политика конфиденциальности</a></p>
                     </div>                            
                     <nav class="col">
-                        <ul class="navigation">
+                        <ul class="navigation" id="navigation-footer">
                             <li class="navigation__item">
-                              <a href="#" class="navigation__link">Услуги и цены</a>
+                              <a href="#price" class="navigation__link">Услуги и цены</a>
                             </li>
                             <li class="navigation__item">
-                              <a href="#" class="navigation__link">Мастера</a>
+                              <a href="#masters" class="navigation__link">Мастера</a>
                             </li>
                             <li class="navigation__item">
-                              <a href="#" class="navigation__link">Наши работы</a>
+                              <a href="#works" class="navigation__link">Наши работы</a>
                             </li>
                             <li class="navigation__item">
-                              <a href="#" class="navigation__link">Контакты</a>
+                              <a href="#contacts" class="navigation__link">Контакты</a>
                             </li>
                         </ul>
                     </nav>                
                 </div>                                
             </div>            
           </footer>
-        </div>
-      
+        </div>      
       </body>
       </html>
