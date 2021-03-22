@@ -22,6 +22,10 @@ $img-path: "/img" !default;
         z-index: 1;
     }
 
+    &__nav {
+        padding-top: 4px;
+    }
+
     .hero {
         position: relative;
         z-index: 1;

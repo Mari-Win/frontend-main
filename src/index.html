@@ -9,8 +9,10 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-grid.min.css" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./css/main.css">
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script src="./js/main.js"></script>
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <!--link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/-->
+        <!--script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script-->
+        
       </head>
       <body>
       
@@ -27,7 +29,7 @@
 
                 <a class="logo col col-sm col-md-auto col-lg-auto" href="/index.html">Мир красоты</a>
                 <nav class="col col-sm col-md col-lg">
-                  <ul class="navigation" id="navigation-top">
+                  <ul class="navigation header__nav" id="navigation-top">
                       <li class="navigation__item"><a href="#price" class="navigation__link">Услуги и цены</a></li>
                       <li class="navigation__item"><a href="#masters" class="navigation__link">Мастера</a></li>
                       <li class="navigation__item"><a href="#works" class="navigation__link">Наши работы</a></li>
@@ -281,8 +283,8 @@
                 <h2>Наши работы</h2>
                 <nav>
                 <div class="works__navbtns navbtns">
-                  <a class="navbtns__prev" href="#"></a>
-                  <a class="navbtns__next" href="#"></a>
+                  <button class="navbtns__prev" id="slick-prev" href="#"></button>
+                  <button class="navbtns__next" id="slick-next" href="#"></button>
                 </div>
                 </nav>
               </div>                                                 
@@ -292,8 +294,13 @@
                     <div class="carousel__item col"><img class="carousel__img" src="img/work2.jpg" /></div>
                     <div class="carousel__item col"><img class="carousel__img" src="img/work3.jpg" /></div>
                     <div class="carousel__item col"><img class="carousel__img" src="img/work4.jpg" /></div>
+                    <div class="carousel__item col"><img class="carousel__img" src="img/work1.jpg" /></div>
+                    <div class="carousel__item col"><img class="carousel__img" src="img/work2.jpg" /></div>
+                    <div class="carousel__item col"><img class="carousel__img" src="img/work3.jpg" /></div>
+                    <div class="carousel__item col"><img class="carousel__img" src="img/work4.jpg" /></div>
                   </div>                 
-                </div>           
+                </div> 
+                        
             </section>
             <section class="section">
               <div class="container brands">
@@ -378,6 +385,10 @@
                 </div>                                
             </div>            
           </footer>
-        </div>      
+        </div>
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="./js/main.js"></script>
       </body>
       </html>
