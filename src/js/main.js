@@ -9,6 +9,6 @@ function scrollTo(id_navigation){
 }
 
 $(document).ready(function(){
-    scrollTo("#navigatin-top");
+    scrollTo("#navigation-top");
     scrollTo("#navigation-footer");    
 });
