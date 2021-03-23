@@ -9,7 +9,8 @@ function scrollTo(id_navigation){
 }
 
 $(document).ready(function(){
-    scrollTo("#navigation-top");
+    scrollTo("#navigation-popup");
+    scrollTo("#navigation-top");    
     scrollTo("#navigation-footer");      
 });
 
@@ -49,4 +50,28 @@ $('.carousel').slick({
       // instead of a settings object
     ]
   });
+});
+
+
+/* menu popup*/
+$(function() {
+	var $menu_popup = $('.menu-popup');
+	
+	$(".navigation-humb, .menu-popup__close").click(function(){
+		$menu_popup.slideToggle(300, function(){
+			if ($menu_popup.is(':hidden')) {
+				$('body').removeClass('body_pointer');
+			} else {
+				$('body').addClass('body_pointer');
+			}					
+		});  
+		return false;
+	});			
+	
+	$(document).on('click', function(e){
+		if (!$(e.target).closest('.menu-popup').length){
+			$('body').removeClass('body_pointer');
+			$menu_popup.slideUp(300);
+		}
+	});
 });

@@ -57,7 +57,7 @@ $img-path: "/img";
         margin-right: 0;
     }
 
-    .header nav .navigation {
+    .header__nav {
         display: none;
     }
 
@@ -116,10 +116,6 @@ $img-path: "/img";
         margin-bottom: 50px;
     }
 
-    .header nav {
-        display: none;
-    }
-
     .navigation-humb {
         position: absolute;
         left: 10px;
@@ -132,7 +128,7 @@ $img-path: "/img";
         margin-bottom: 10px;
     }
 
-    .header .navigation {
+    .header__nav {
         display: none;
     }
 
