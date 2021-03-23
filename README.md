@@ -1,4 +1,4 @@
 ### автор Почивалова Марина
-#### https://github.com/marinaghb/frontend-main
+#### https://infallible-euler-f1f1e5.netlify.app/
 
 ##### frontend Rubius курсы
