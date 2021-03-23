@@ -10,9 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./css/main.css">
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-        <!--link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/-->
-        <!--script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script-->
-        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />        
       </head>
       <body>
       
@@ -54,12 +52,11 @@
               </div>
       
               <ul class="social">
-                <li class="social__item"><a href="#"><img src="./img/vk.png" title="Vkontakte"></a></li>
-                <li class="social__item"><a href="#"><img src="./img/instagram.png" title="Instagram"></a></li>
-                <li class="social__item"><a href="#"><img src="./img/youtube.png" title="Youtube"></a></li>
+                <li class="social__item"><a href="#" class="social__link social__link_vk"  title="Vkontakte"><img src="./img/vk.png" title="Vkontakte"></a></li>
+                <li class="social__item"><a href="#"  class="social__link social__link_inst" title="Instagram"><img src="./img/instagram.png" title="Instagram"></a></li>
+                <li class="social__item"><a href="#"  class="social__link social__link_ytube" title="YouTube"><img src="./img/youtube.png" title="YouTube"></a></li>
               </ul>
-      
-             
+
             </div>
           </header>
       
@@ -290,17 +287,66 @@
               </div>                                                 
                 <div class="works__carousel">
                   <div class="carousel row">
-                    <div class="carousel__item col"><img class="carousel__img" src="img/work1.jpg" /></div>
-                    <div class="carousel__item col"><img class="carousel__img" src="img/work2.jpg" /></div>
-                    <div class="carousel__item col"><img class="carousel__img" src="img/work3.jpg" /></div>
-                    <div class="carousel__item col"><img class="carousel__img" src="img/work4.jpg" /></div>
-                    <div class="carousel__item col"><img class="carousel__img" src="img/work1.jpg" /></div>
-                    <div class="carousel__item col"><img class="carousel__img" src="img/work2.jpg" /></div>
-                    <div class="carousel__item col"><img class="carousel__img" src="img/work3.jpg" /></div>
-                    <div class="carousel__item col"><img class="carousel__img" src="img/work4.jpg" /></div>
+                     <div class="carousel__item col">
+                      <a href="img/work1.jpg" data-fancybox="gallery" data-caption="Work #1">
+                        <div class="carousel__img-wrapper">
+                          <img class="carousel__img" src="img/work1.jpg" />
+                       </div>
+                       </a>
+                      </div>
+                      <div class="carousel__item col">
+                        <a href="img/work2.jpg" data-fancybox="gallery" data-caption="Work #2">
+                        <div class="carousel__img-wrapper">
+                          <img class="carousel__img" src="img/work2.jpg" />
+                       </div>
+                      </a>
+                      </div>
+                      <div class="carousel__item col">
+                        <a href="img/work3.jpg" data-fancybox="gallery" data-caption="Work #3">
+                        <div class="carousel__img-wrapper">
+                          <img class="carousel__img" src="img/work3.jpg" />
+                       </div>
+                      </a>
+                      </div>
+                      <div class="carousel__item col">
+                        <a href="img/work4.jpg" data-fancybox="gallery" data-caption="Work #4">
+                        <div class="carousel__img-wrapper">
+                          <img class="carousel__img" src="img/work4.jpg" />
+                       </div>
+                      </a>
+                      </div>
+                      <div class="carousel__item col">
+                        <a href="img/work-6.jpg" data-fancybox="gallery" data-caption="Work #6">
+                          <div class="carousel__img-wrapper">
+                        <img class="carousel__img" src="img/work-6.jpg" />
+                       </div>
+                     </a>
+                    </div>
+                    <div class="carousel__item col">
+                      <a href="img/work-5.jpg" data-fancybox="gallery" data-caption="Work #5">
+                        <div class="carousel__img-wrapper">
+                          <img class="carousel__img" src="img/work-5.jpg" />
+                       </div>
+                       </a>
+                      </div>
+                      <div class="carousel__item col">
+                        <a href="img/work-9.jpg" data-fancybox="gallery" data-caption="Work #9">
+                          <div class="carousel__img-wrapper">
+                        <img class="carousel__img" src="img/work-9.jpg" />
+                       </div>
+                     </a>
+                    </div>
+                       
+                        <div class="carousel__item col">
+                          <a href="img/work-7.jpg" data-fancybox="gallery" data-caption="Work #7">
+                            <div class="carousel__img-wrapper">
+                          <img class="carousel__img" src="img/work-7.jpg" />
+                         </div>
+                       </a>
+                      </div>                     
                   </div>                 
-                </div> 
-                        
+                </div>
+                   
             </section>
             <section class="section">
               <div class="container brands">
@@ -335,10 +381,11 @@
                       <p class="contacts__email"><a href="mailto:info@more-krasoty.ru?subject=Записаться к мастеру">info@more-krasoty.ru</a></p>
                       <p class="contacts__social-text">Мы в социальных сетях</p>
                     </div>
-                    <ul class="contacts__social social">
-                      <li class="social__item"><a href="#"><img src="./img/vk.png" title="Vkontakte"></a></li>
-                      <li class="social__item"><a href="#"><img src="./img/instagram.png" title="Instagram"></a></li>
-                      <li class="social__item"><a href="#"><img src="./img/youtube.png" title="Youtube"></a></li>
+                    
+                    <ul class="contacts__social  social">
+                      <li class="social__item"><a href="#" class="social__link social__link_vk" title="Vkontakte"><img src="./img/vk.png" title="Vkontakte"></a></li>
+                      <li class="social__item"><a href="#" class="social__link social__link_inst" title="Instagram"><img src="./img/instagram.png" title="Instagram"></a></li>
+                      <li class="social__item"><a href="#" class="social__link social__link_ytube" title="YouTube"><img src="./img/youtube.png" title="Youtube"></a></li>
                     </ul>
                   </div>
                   <div class="col">
@@ -389,6 +436,7 @@
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
         <script src="./js/main.js"></script>
       </body>
       </html>

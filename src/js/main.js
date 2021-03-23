@@ -22,7 +22,7 @@ $('.carousel').slick({
     nextArrow:document.getElementById("slick-next"),
     responsive: [
       {
-        breakpoint: 1100,
+        breakpoint: 1110,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
@@ -31,7 +31,7 @@ $('.carousel').slick({
         }
       },
       {
-        breakpoint: 700,
+        breakpoint: 900,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2

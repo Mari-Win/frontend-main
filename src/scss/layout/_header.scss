@@ -53,6 +53,7 @@ $img-path: "/img" !default;
         transform: translateY(-50%);
         flex-direction: column;
         z-index: 1;
+        //transition: all 0.3s cubic-bezier(0.08, 0.43, 0.24, 1);
         
         li {
             margin-bottom: 20px;

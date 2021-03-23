@@ -2,83 +2,30 @@
     display: block;
     //justify-content: space-between;
 
-    &__item {        
-        border-radius: 8px;        
-        object-fit: cover;
-        overflow: hidden;
-        //max-height: 338px;
-        width: 338px;       
-        z-index: 1;
-        transition: 0.5s;    
-        padding: 20px 0;
-        margin: 0 15px;
-        position: relative;
-    }
-
-    &__item:hover {
-        z-index: 2;
-        transform: scale(1.1);        
-    }
-
-    &__img::before {
-        content: "";
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        position: absolute;
-        background: #000;
-       // opacity: 0;
-        transition: 0.3s opacity;
-        z-index: 4;       
-    }
-
-    &__item:hover:before {
-        opacity: 0.5;
-    }
-
-    &__img {
-        width:100%;
-        height: 100%;
-        object-fit: cover;        
-        //max-height: 338px;  
-        max-width: 338px;          
-        //height: 338px;
-        border-radius: 8px;
-        margin-right: 1rem;  
-        position: relative;
-        overflow: hidden;
-        z-index: 2;
-        transition: 0.5s;   
-  
-    }
-
- /*   display: flex;
-    flex-direction: row;
-
     &__item {
-        border-radius: 8px;        
-        object-fit: cover;
-        overflow: hidden;
-        max-height: 338px;
-        max-width: 338px;
-        z-index: 1;
-        transition: 0.5s;    
-        padding: 0;
+        width: 368px;
+        height: 400px;  
+        padding-top: 20px;
+        padding-bottom: 20px;
         margin: 0;
        // position: relative;   
     }
 
-    &__item:not(:last-child) {
-       margin-right: 29px;
+    &__img-wrapper {
+        max-width:338px;
+        border-radius: 8px;
+        overflow: hidden;
+        margin: auto;
+        position: relative;
+        transition: transform 2s cubic-bezier(0.08, 0.43, 0.24, 1);
     }
 
-    &__item:hover {
-        z-index: 2;
-        transform: scale(1.1);        
+    &__img-wrapper:hover {
+        transform: scale(1.1);
+        cursor: pointer;
     }
 
-    &__item::before {
+    &__img-wrapper::before {
         content: "";
         left: 0;
         right: 0;
@@ -87,15 +34,15 @@
         position: absolute;
         background: #000;
         opacity: 0;
-        transition: 0.3s opacity;
+        transition: all 0.3s ease;
         z-index: 2;
     }
 
-    &__item:hover:before {
+    &__img-wrapper:hover:before {
         opacity: 0.5;
     }
 
-    &__item:after {
+    &__img-wrapper:after {
         content: "Увеличить";
         background-image: url(#{$img-path}/zoom.png);
         background-repeat: no-repeat;
@@ -115,20 +62,22 @@
         justify-content: center;
         z-index: 3;
         opacity: 0;
-        transition: 0.5s opacity;
+        transition: all 0.3s;
     }
 
-    &__item:hover:after {
+    &__img-wrapper:hover:after {
         opacity: 1;
-        cursor: pointer;
+        //background-size: 55px;
     }
-    
-*/
+
+    &__img {
+        object-fit: cover;
+        width: 338px;
+        height: 338px;
+
+    }
 }
 
-.slick-track {
-    height: 338px;
-}
 
 .navbtns {
     &__next,
@@ -151,4 +100,9 @@
     button:hover {
         background-color: #F8F6F7;
     }
+}
+
+
+.fancybox-image {
+    border-radius: 8px;
 }
