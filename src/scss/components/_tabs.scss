@@ -1,0 +1,16 @@
+.tabs { 
+    &__links { 
+      .active { 
+        color: #00bf78; 
+        border-bottom: 2px solid #00bf78;
+      } 
+    } 
+     
+    &__item { 
+      display: none !important; 
+       
+      &.active { 
+        display: flex !important; 
+      } 
+    } 
+  }
