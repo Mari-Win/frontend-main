@@ -80,4 +80,14 @@ $('.carousel').slick({
 		}
 	});
 
+  /*const form = document.getElementById('contact-form');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const {name, phone} = form.elements;
+    console.log({
+      name: name.value,
+      phone: phone.value
+    });
+  });*/
 });

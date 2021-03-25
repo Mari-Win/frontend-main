@@ -520,9 +520,11 @@
                       <h5 class="signupform__title">Быстрая запись</h5>
                       <p class="signupform__text">Наш менеджер перезвонит в течение нескольких минут, уточнит подробности и согласует время.
                       </p>
-                      <input class="signupform__input" type="text" required maxlength="25" minlength="3" placeholder="Ваше имя" title="Введите Ваше имя"/>
-                      <input class="signupform__input" type="tel"  required maxlength="15" minlength="5" placeholder="+7 (___) ___-__-__" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" title="Введите Ваш номер телефона"/>
-                      <button class="btn signupform__btn" type="submit">Записаться</button>
+                      <form id="contact-form">
+                        <input name="name" class="signupform__input" type="text" required maxlength="25" minlength="3" placeholder="Ваше имя" title="Введите Ваше имя"/>
+                        <input name="name" class="signupform__input" type="tel"  required maxlength="15" minlength="5" placeholder="+7 (___) ___-__-__" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" title="Введите Ваш номер телефона"/>
+                        <button class="btn signupform__btn" type="submit">Записаться</button>
+                      </form>
                       <p class="small-text">Нажимая на кнопку вы соглашаетесь с <a href="#">обработкой персональных данных</a></p>
   
                     </div>
