@@ -4,11 +4,13 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
-        <title>Мир красоты</title>
-            
+        <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+        <title>Мир красоты</title>            
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-grid.min.css" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />        
       </head>
       <body>
       
@@ -25,16 +27,16 @@
 
                 <a class="logo col col-sm col-md-auto col-lg-auto" href="/index.html">Мир красоты</a>
                 <nav class="col col-sm col-md col-lg">
-                  <ul class="navigation">
-                      <li class="navigation__item"><a href="#" class="navigation__link">Услуги и цены</a></li>
-                      <li class="navigation__item"><a href="#" class="navigation__link">Мастера</a></li>
-                      <li class="navigation__item"><a href="#" class="navigation__link">Наши работы</a></li>
-                      <li class="navigation__item"><a href="#" class="navigation__link">О нас</a></li>
-                      <li class="navigation__item"><a href="#" class="navigation__link">Контакты</a></li>
+                  <ul class="navigation header__nav" id="navigation-top">
+                      <li class="navigation__item"><a href="#price" class="navigation__link">Услуги и цены</a></li>
+                      <li class="navigation__item"><a href="#masters" class="navigation__link">Мастера</a></li>
+                      <li class="navigation__item"><a href="#works" class="navigation__link">Наши работы</a></li>
+                      <li class="navigation__item"><a href="#about" class="navigation__link">О нас</a></li>
+                      <li class="navigation__item"><a href="#contacts" class="navigation__link">Контакты</a></li>
                   </ul>
                 </nav>
-                <div class="contacts col col-sm-auto col-md-auto col-lg-auto">
-                    <span class="phone">8 (499) 686-17-62</span></br>
+                <div class="header__contacts col col-sm-auto col-md-auto col-lg-auto">
+                    <span class="phone"><a href="tel:+74996861762" title="Позвоните нам">8 (499) 686-17-62</a></span></br>
                     <span class="work-time">с 10.00 до 19.00 без выходных</span>
                 </div>
               </div>
@@ -50,17 +52,16 @@
               </div>
       
               <ul class="social">
-                <li class="social__item"><a href="#"><img src="./img/vk.png" title="Vkontakte"></a></li>
-                <li class="social__item"><a href="#"><img src="./img/instagram.png" title="Instagram"></a></li>
-                <li class="social__item"><a href="#"><img src="./img/youtube.png" title="Youtube"></a></li>
+                <li class="social__item"><a href="#" class="social__link social__link_vk"  title="Vkontakte"><img src="./img/vk.png" title="Vkontakte"></a></li>
+                <li class="social__item"><a href="#"  class="social__link social__link_inst" title="Instagram"><img src="./img/instagram.png" title="Instagram"></a></li>
+                <li class="social__item"><a href="#"  class="social__link social__link_ytube" title="YouTube"><img src="./img/youtube.png" title="YouTube"></a></li>
               </ul>
-      
-             
+
             </div>
           </header>
       
           <main class="main">
-            <section class="section">
+            <section class="section" id="about">
               <div class="container">
                 <h2>О салоне</h2>
       
@@ -69,12 +70,13 @@
                     <p class="short-descr">Мир красоты - это уютный салон в самом центре города. Здесь работают профессиональные визажисты, стилисты и мастера татуажа</p>
                     <p class="text-descr">Красота и хороший уход никогда не выходят из моды. Мы приглашаем Вас в место, где гармония обретает форму,
                         а внешность становится отражением внутреннего мира. Новая жизнь начинается с небольших изменений. Мы помогаем нашим клиентам воплотить их индивидуальность во внешнем облике. Мы создаем стиль – вместе с Вами и для Вас.</p>
-                    <a href="#">Развернуть</a>    
+                    <a href="#" class="">Развернуть</a>    
                   </div>
       
                   <div class="about-video col-sm">
                     <div class="about-video__play">                    
-                      <p>Короткое видео о нас</p>                                            
+                      <p>Короткое видео о нас</p> 
+                      <!--iframe width="560" height="315" src="https://www.youtube.com/embed/aUjNoszPSh0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe-->
                     </div>                                                        
                   </div>
                 </div>
@@ -145,9 +147,9 @@
               </div>
             </section>
       
-            <section class="section pricelist section_mbot64">
+            <section class="section pricelist section_mbot64" id="price">
               <div class="container">
-                <h3>Услуги и цены</h3>
+                <h2>Услуги и цены</h2>
                 <nav class="pricelist__nav">
                   <ul class="navigation">
                       <li class="navigation__item navigation__item_active">
@@ -231,47 +233,184 @@
               </div>
             </section>
 
-            <section class="section masters section_grey main__masters">
+            <section class="section masters section_grey main__masters" id="masters">
               <div class="container">
-                <h3>Мастера</h3>
+                <h2>Мастера</h2>
                 <p class="masters__descr">Дружная команда настоящих профессионалов</p>
                 <div class="row">
-                  <div class="master-card masters__item col-sm">
-                    <div class="master-card__foto">
-                      <img class="master-card__img" src="/img/photo1.jpg" alt="">
+                  <div class="masters__item col-sm">
+                    <div class="master-card ">
+                      <div class="master-card__foto">
+                        <img class="master-card__img" src="/img/photo1.jpg" alt="">
+                      </div>
+                      <div class="master-card__name">Краснова Ирина</div>
+                      <div class="master-card__descr">Мастер ногтевого сервиса</div>
+                      <div class="master-card__experience">опыт работы 5 лет</div>
                     </div>
-                    <div class="master-card__name">Краснова Ирина</div>
-                    <div class="master-card__descr">Мастер ногтевого сервиса</div>
-                    <div class="master-card__experience">опыт работы 5 лет</div>
                   </div>
-                  <div class="master masters__item col-sm">
-                    <div class="master-card__foto">
-                      <img class="master-card__img" src="/img/photo2.jpg" alt="">
+                  <div class="masters__item col-sm">
+                    <div class="master-card ">
+                      <div class="master-card__foto">
+                        <img class="master-card__img" src="/img/photo2.jpg" alt="">
+                      </div>
+                      <div class="master-card__name">Калилова Жанна</div>
+                      <div class="master-card__descr">Визажист-стилист</div>
+                      <div class="master-card__experience">опыт работы 5 лет</div>
                     </div>
-                    <div class="master-card__name">Калилова Жанна</div>
-                    <div class="master-card__descr">Визажист-стилист</div>
-                    <div class="master-card__experience">опыт работы 5 лет</div>
                   </div>
-                  <div class="master masters__item col-sm">
-                    <div class="master-card__foto">
-                      <img class="master-card__img" src="/img/photo3.jpg" alt="">
+                  <div class="masters__item col-sm">
+                    <div class="master-card ">
+                      <div class="master-card__foto">
+                        <img class="master-card__img" src="/img/photo3.jpg" alt="">
+                      </div>
+                      <div class="master-card__name">Киселева Алина</div>
+                      <div class="master-card__descr">Парикмахер</div>
+                      <div class="master-card__experience">опыт работы 5 лет</div>
                     </div>
-                    <div class="master-card__name">Киселева Алина</div>
-                    <div class="master-card__descr">Парикмахер</div>
-                    <div class="master-card__experience">опыт работы 5 лет</div>
                   </div>
-                  <div class="master masters__item col-sm">
-                    <div class="master-card__foto">
-                      <img class="master-card__img" src="/img/photo4.png" alt="">
+                  <div class="masters__item col-sm">
+                    <div class="master-card ">
+                      <div class="master-card__foto">
+                        <img class="master-card__img" src="/img/photo4.png" alt="">
+                      </div>
+                      <div class="master-card__name">Иванова Елена</div>
+                      <div class="master-card__descr">Мастер ногтевого сервиса</div>
+                      <div class="master-card__experience">опыт работы 5 лет</div>
                     </div>
-                    <div class="master-card__name">Иванова Елена</div>
-                    <div class="master-card__descr">Мастер ногтевого сервиса</div>
-                    <div class="master-card__experience">опыт работы 5 лет</div>
                   </div>
                 </div>
-
               </div>
             </section>
+
+            <section class="section" id="works">
+              <div class="container works main__works">
+                <h2>Наши работы</h2>
+                <nav>
+                <div class="works__navbtns navbtns">
+                  <button class="navbtns__prev" id="slick-prev" href="#"></button>
+                  <button class="navbtns__next" id="slick-next" href="#"></button>
+                </div>
+                </nav>
+              </div>                                                 
+                <div class="works__carousel">
+                  <div class="carousel row">
+                     <div class="carousel__item col">
+                      <a href="img/work1.jpg" data-fancybox="gallery" data-caption="Work #1">
+                        <div class="carousel__img-wrapper">
+                          <img class="carousel__img" src="img/work1.jpg" />
+                       </div>
+                       </a>
+                      </div>
+                      <div class="carousel__item col">
+                        <a href="img/work2.jpg" data-fancybox="gallery" data-caption="Work #2">
+                        <div class="carousel__img-wrapper">
+                          <img class="carousel__img" src="img/work2.jpg" />
+                       </div>
+                      </a>
+                      </div>
+                      <div class="carousel__item col">
+                        <a href="img/work3.jpg" data-fancybox="gallery" data-caption="Work #3">
+                        <div class="carousel__img-wrapper">
+                          <img class="carousel__img" src="img/work3.jpg" />
+                       </div>
+                      </a>
+                      </div>
+                      <div class="carousel__item col">
+                        <a href="img/work4.jpg" data-fancybox="gallery" data-caption="Work #4">
+                        <div class="carousel__img-wrapper">
+                          <img class="carousel__img" src="img/work4.jpg" />
+                       </div>
+                      </a>
+                      </div>
+                      <div class="carousel__item col">
+                        <a href="img/work-6.jpg" data-fancybox="gallery" data-caption="Work #6">
+                          <div class="carousel__img-wrapper">
+                        <img class="carousel__img" src="img/work-6.jpg" />
+                       </div>
+                     </a>
+                    </div>
+                    <div class="carousel__item col">
+                      <a href="img/work-5.jpg" data-fancybox="gallery" data-caption="Work #5">
+                        <div class="carousel__img-wrapper">
+                          <img class="carousel__img" src="img/work-5.jpg" />
+                       </div>
+                       </a>
+                      </div>
+                      <div class="carousel__item col">
+                        <a href="img/work-9.jpg" data-fancybox="gallery" data-caption="Work #9">
+                          <div class="carousel__img-wrapper">
+                        <img class="carousel__img" src="img/work-9.jpg" />
+                       </div>
+                     </a>
+                    </div>
+                       
+                        <div class="carousel__item col">
+                          <a href="img/work-7.jpg" data-fancybox="gallery" data-caption="Work #7">
+                            <div class="carousel__img-wrapper">
+                          <img class="carousel__img" src="img/work-7.jpg" />
+                         </div>
+                       </a>
+                      </div>                     
+                  </div>                 
+                </div>
+                   
+            </section>
+            <section class="section">
+              <div class="container brands">
+                <p class="brands__text">Бренды, которые мы используем в работе</p>
+                <div class="row brands__container">
+                  <div class="col">
+                    <img src="./img/wella.png" alt="Wella" title="Wella" class="brands__img" />
+                  </div>
+                  <div class="col">
+                    <img src="./img/shwarz.png" alt="Shwarzkopf"  title="Shwarzkopf" class="brands__img">
+                  </div>
+                  <div class="col">
+                    <img src="./img/tigi.png" alt="TIGI" title="TIGI" class="brands__img">
+                  </div>
+                  <div class="col">
+                    <img src="./img/londa.png" alt="Londa"  title="Londa" class="brands__img">  
+                  </div>
+                  <div class="col">
+                    <img src="./img/nioxin.png" alt="Nioxin" title="Nioxin" class="brands__img">  
+                  </div>                                                                      
+                </div>                
+              </div>
+            </section>
+            <section class="section contacts" id="contacts">
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <h2>Контакты</h2>
+                    <div class="contacts__text">
+                      <p class="contacts__addr">Томск, проспект Ленина, дом 13</p>
+                      <p class="contacts__phone phone"><a href="tel:+74996861762" title="Позвоните нам">8 (499) 686-17-62</a></p>
+                      <p class="contacts__email"><a href="mailto:info@more-krasoty.ru?subject=Записаться к мастеру">info@more-krasoty.ru</a></p>
+                      <p class="contacts__social-text">Мы в социальных сетях</p>
+                    </div>
+                    
+                    <ul class="contacts__social  social">
+                      <li class="social__item"><a href="#" class="social__link social__link_vk" title="Vkontakte"><img src="./img/vk.png" title="Vkontakte"></a></li>
+                      <li class="social__item"><a href="#" class="social__link social__link_inst" title="Instagram"><img src="./img/instagram.png" title="Instagram"></a></li>
+                      <li class="social__item"><a href="#" class="social__link social__link_ytube" title="YouTube"><img src="./img/youtube.png" title="Youtube"></a></li>
+                    </ul>
+                  </div>
+                  <div class="col">
+                    <div class="signupform  contacts__signupform">
+                      <h5 class="signupform__title">Быстрая запись</h5>
+                      <p class="signupform__text">Наш менеджер перезвонит в течение нескольких минут, уточнит подробности и согласует время.
+                      </p>
+                      <input class="signupform__input" type="text" required maxlength="25" minlength="3" placeholder="Ваше имя" title="Введите Ваше имя"/>
+                      <input class="signupform__input" type="tel"  required maxlength="15" minlength="5" placeholder="+7 (___) ___-__-__" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" title="Введите Ваш номер телефона"/>
+                      <button class="btn signupform__btn" type="submit">Записаться</button>
+                      <p class="small-text">Нажимая на кнопку вы соглашаетесь с <a href="#">обработкой персональных данных</a></p>
+  
+                    </div>
+                  </div>                                 
+                </div>                
+              </div>           
+            </section>
+            
           </main>
       
           <footer class="footer">
@@ -282,18 +421,18 @@
                         <p><a href="#">Политика конфиденциальности</a></p>
                     </div>                            
                     <nav class="col">
-                        <ul class="navigation">
+                        <ul class="navigation" id="navigation-footer">
                             <li class="navigation__item">
-                              <a href="#" class="navigation__link">Услуги и цены</a>
+                              <a href="#price" class="navigation__link">Услуги и цены</a>
                             </li>
                             <li class="navigation__item">
-                              <a href="#" class="navigation__link">Мастера</a>
+                              <a href="#masters" class="navigation__link">Мастера</a>
                             </li>
                             <li class="navigation__item">
-                              <a href="#" class="navigation__link">Наши работы</a>
+                              <a href="#works" class="navigation__link">Наши работы</a>
                             </li>
                             <li class="navigation__item">
-                              <a href="#" class="navigation__link">Контакты</a>
+                              <a href="#contacts" class="navigation__link">Контакты</a>
                             </li>
                         </ul>
                     </nav>                
@@ -301,6 +440,10 @@
             </div>            
           </footer>
         </div>
-      
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+        <script src="./js/main.js"></script>
       </body>
       </html>

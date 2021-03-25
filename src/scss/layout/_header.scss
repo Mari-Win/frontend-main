@@ -22,42 +22,42 @@ $img-path: "/img" !default;
         z-index: 1;
     }
 
+    &__nav {
+        padding-top: 4px;
+    }
+
     .hero {
         position: relative;
         z-index: 1;
         max-width: 512px;
     }
 
-    .contacts {
+    &__contacts {
         text-align: right;
+        padding: 0;
     }
 
-    .contacts .phone {
+    &__contacts .phone {
         font-size: 18px;
         font-weight: 500;
     }
 
-    .contacts .work-time {
+    &__contacts .work-time {
         font-size: 11px;
-    }
+    }    
 
     .social {
         position: absolute;
-        right: 0;
+        right: 10px;
         top: 50%;
         transform: translateY(-50%);
         flex-direction: column;
         z-index: 1;
-    }
-
-    .social li {
-        margin-bottom: 20px;
-        height: 28px;
-    }
-
-    .social li img:hover {
-        cursor: pointer;                        
-        opacity: 0.8;
+        
+        li {
+            margin-bottom: 20px;
+            height: 28px;
+        }        
     }
     
     p {
@@ -106,5 +106,9 @@ $img-path: "/img" !default;
 .logo {
     font-size: 24px;
     font-weight: bold;
-    /* margin-right: 136px;*/
+    color: #333333;
+}
+
+.logo:hover {
+    text-decoration: none;
 }

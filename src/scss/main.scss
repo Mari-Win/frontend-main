@@ -18,17 +18,23 @@ $img-path: "/img";
         opacity: 0.5;
     }
 
-    .navigation__item:not(:last-child) {
+    .header .navigation__item:not(:last-child) {
         margin-right: 10px;
     }
 
-    .pricelist__nav .navigation {
-        flex-direction: column;
+    .masters {
+        &__item {
+            margin: 0 auto 20px;
+        }
     }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
+    h2 {
+        font-size: 36px;
+    }
+
     .wrapper {
         max-width: 768px;
     }
@@ -132,7 +138,7 @@ $img-path: "/img";
         display: none;
     }
 
-    .header .contacts {
+    .header__contacts {
         text-align: center;
     }
 
@@ -172,7 +178,7 @@ $img-path: "/img";
         display: none;
     }
 
-    .header .contacts {
+    .header__contacts {
         text-align: center;
     }
 

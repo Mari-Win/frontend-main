@@ -30,6 +30,24 @@ a {
     text-decoration: none;
 }
 
+a {
+    color: #278AFF;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+button {
+    border:none;
+}
+
+input,
+button,
+a {
+    outline:none;
+}
+
 img {
     display: block;
 }
@@ -109,4 +127,14 @@ h1 {
 
 h3 {
     margin-bottom: 34px;
+}
+
+.phone a{
+    text-decoration: none;
+    color: #333333;
+}
+
+.small-text,
+.small-text a {
+    font-size: 12px;
 }

@@ -1,0 +1,108 @@
+.carousel {
+    display: block;
+
+    &__item {
+        width: 368px;
+        height: 400px;  
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin: 0;
+    }
+
+    &__img-wrapper {
+        max-width:338px;
+        border-radius: 8px;
+        overflow: hidden;
+        margin: auto;
+        position: relative;
+        transition: transform 2s cubic-bezier(0.08, 0.43, 0.24, 1);
+    }
+
+    &__img-wrapper:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+    &__img-wrapper::before {
+        content: "";
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        background: #000;
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 2;
+    }
+
+    &__img-wrapper:hover:before {
+        opacity: 0.5;
+    }
+
+    &__img-wrapper:after {
+        content: "Увеличить";
+        background-image: url(#{$img-path}/zoom.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-position-y:35%;
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;        
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) translateY(10%);        
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 3;
+        opacity: 0;
+        transition: all 0.3s;
+    }
+
+    &__img-wrapper:hover:after {
+        opacity: 1;
+    }
+
+    &__img {
+        object-fit: cover;
+        width: 338px;
+        height: 338px;
+    }
+}
+
+
+.navbtns {
+    &__next,
+    &__prev {
+        display: block;
+        top: 10px;
+        right: 20%;
+        border:none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background: url(#{$img_path}/arrow.png) no-repeat center;        
+    }  
+    
+    &__prev {        
+        background: url(#{$img_path}/arrow.png) no-repeat center;
+        transform: scale(-1, 1);
+    }  
+
+    button {
+        transition: all 0.3s;
+    }
+
+    button:hover {
+        background-color: #F8F6F7;
+    }
+}
+
+
+.fancybox-image {
+    border-radius: 8px;
+}

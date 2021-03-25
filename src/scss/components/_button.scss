@@ -6,6 +6,7 @@
     font-size: 14px;
     line-height: 14px;
     padding: 17px 30px;
+    transition: all 0.5s cubic-bezier(0.08, 0.43, 0.24, 1);
 
     &_small {
         font-size: 12px;
@@ -13,5 +14,6 @@
 
     &:hover {
         background: #fd6f45;
+        cursor: pointer;
     }
 }
