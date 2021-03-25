@@ -18,12 +18,14 @@ $img-path: "/img";
         opacity: 0.5;
     }
 
-    .navigation__item:not(:last-child) {
+    .header .navigation__item:not(:last-child) {
         margin-right: 10px;
     }
 
-    .pricelist__nav .navigation {
-        flex-direction: column;
+    .masters {
+        &__item {
+            margin: 0 auto 20px;
+        }
     }
 }
 

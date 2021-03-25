@@ -1,25 +1,23 @@
 //example from https://gnatkovsky.com.ua/yakorya-i-plavnyj-perexod-po-yakornym-ssylkam.html
 function scrollTo(id_navigation){
-    $(id_navigation).on("click","a", function (event) {
+    $(id_navigation).on('click','a', function (event) {
         event.preventDefault();
-        var id  = $(this).attr('href'),
+        const id  = $(this).attr('href'),
             top = $(id).offset().top;                  
         $('body,html').animate({scrollTop: top}, 1500);
     });
 }
 
-$(document).ready(function(){
-    scrollTo("#navigation-top");
-    scrollTo("#navigation-footer");      
-});
+$(document).ready(() => {
+    scrollTo('#navigation-top');
+    scrollTo('#navigation-footer');      
 
-$(document).ready(function(){
 $('.carousel').slick({    
     slidesToShow:4,
     slidesToScroll: 1,   
     speed:200,
-    prevArrow:document.getElementById("slick-prev"),
-    nextArrow:document.getElementById("slick-next"),
+    prevArrow:document.getElementById('slick-prev'),
+    nextArrow:document.getElementById('slick-next'),
     responsive: [
       {
         breakpoint: 1110,

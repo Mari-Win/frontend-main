@@ -10,8 +10,11 @@
         align-content: flex-start;
         padding-right: 92px;
     }
+    
     &__nav {
-        margin-bottom: 50px;
+        margin-bottom: 45px;
+        overflow: auto;
+        height: 30px;
     }
 
     &__nav .navigation {
