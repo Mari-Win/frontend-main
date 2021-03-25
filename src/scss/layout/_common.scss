@@ -35,12 +35,17 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
     cursor: pointer;
 }
 
 button {
     border:none;
+}
+
+input,
+button,
+a {
+    outline:none;
 }
 
 img {

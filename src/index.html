@@ -18,7 +18,7 @@
           <header class="header">
             <div class="menu-popup">
               <a class="menu-popup__close" href="#"></a>
-              <nav class="">
+              <nav>
                 <ul class="navigation menu-popup__nav" id="navigation-popup">
                     <li class="navigation__item"><a href="#price" class="navigation__link">Услуги и цены</a></li>
                     <li class="navigation__item"><a href="#masters" class="navigation__link">Мастера</a></li>
@@ -29,7 +29,6 @@
               </nav>						
             </div>   
             <div class="container">
-              
               <div class="header-top row">              
                 <div class="navigation-humb col col-sm col-md">
                   <span class="navigation-humb__item"></span>
@@ -37,7 +36,7 @@
                   <span class="navigation-humb__item"></span>
                 </div>
                 <a class="logo col col-sm col-md-auto col-lg-auto" href="/index.html">Мир красоты</a>
-                <nav class="col col-sm col-md col-lg  header__nav">
+                <nav class="col col-sm col-md col-lg header__nav">
                   <ul class="navigation" id="navigation-top">
                       <li class="navigation__item"><a href="#price" class="navigation__link">Услуги и цены</a></li>
                       <li class="navigation__item"><a href="#masters" class="navigation__link">Мастера</a></li>
@@ -81,7 +80,7 @@
                     <p class="short-descr">Мир красоты - это уютный салон в самом центре города. Здесь работают профессиональные визажисты, стилисты и мастера татуажа</p>
                     <p class="text-descr">Красота и хороший уход никогда не выходят из моды. Мы приглашаем Вас в место, где гармония обретает форму,
                         а внешность становится отражением внутреннего мира. Новая жизнь начинается с небольших изменений. Мы помогаем нашим клиентам воплотить их индивидуальность во внешнем облике. Мы создаем стиль – вместе с Вами и для Вас.</p>
-                    <a href="#">Развернуть</a>    
+                    <a href="#" class="">Развернуть</a>    
                   </div>
       
                   <div class="about-video col-sm">
@@ -163,22 +162,22 @@
                 <h2>Услуги и цены</h2>
                 <nav class="pricelist__nav">
                   <ul class="navigation tabs__links">
-                      <li class="navigation__link tabs__link">
+                      <li class="navigation__item tabs__link">
                         Стрижка и укладка
                       </li>
-                      <li class="navigation__link tabs__link">
+                      <li class="navigation__item tabs__link">
                         Косметология
                       </li>
-                      <li class="navigation__link tabs__link">
+                      <li class="navigation__item tabs__link">
                         Маникюр и педикюр
                       </li>
-                      <li class="navigation__link tabs__link">
+                      <li class="navigation__item tabs__link">
                         Макияж
                       </li>
-                      <li class="navigation__link tabs__link">
+                      <li class="navigation__item tabs__link">
                         Брови и ресницы
                       </li>
-                      <li class="navigation__link tabs__link">
+                      <li class="navigation__item tabs__link">
                         Массаж
                       </li>
                   </ul>
@@ -365,40 +364,47 @@
                 <h2>Мастера</h2>
                 <p class="masters__descr">Дружная команда настоящих профессионалов</p>
                 <div class="row">
-                  <div class="master-card masters__item col-sm">
-                    <div class="master-card__foto">
-                      <img class="master-card__img" src="/img/photo1.jpg" alt="">
+                  <div class="masters__item col-sm">
+                    <div class="master-card ">
+                      <div class="master-card__foto">
+                        <img class="master-card__img" src="/img/photo1.jpg" alt="">
+                      </div>
+                      <div class="master-card__name">Краснова Ирина</div>
+                      <div class="master-card__descr">Мастер ногтевого сервиса</div>
+                      <div class="master-card__experience">опыт работы 5 лет</div>
                     </div>
-                    <div class="master-card__name">Краснова Ирина</div>
-                    <div class="master-card__descr">Мастер ногтевого сервиса</div>
-                    <div class="master-card__experience">опыт работы 5 лет</div>
                   </div>
-                  <div class="master masters__item col-sm">
-                    <div class="master-card__foto">
-                      <img class="master-card__img" src="/img/photo2.jpg" alt="">
+                  <div class="masters__item col-sm">
+                    <div class="master-card ">
+                      <div class="master-card__foto">
+                        <img class="master-card__img" src="/img/photo2.jpg" alt="">
+                      </div>
+                      <div class="master-card__name">Калилова Жанна</div>
+                      <div class="master-card__descr">Визажист-стилист</div>
+                      <div class="master-card__experience">опыт работы 5 лет</div>
                     </div>
-                    <div class="master-card__name">Калилова Жанна</div>
-                    <div class="master-card__descr">Визажист-стилист</div>
-                    <div class="master-card__experience">опыт работы 5 лет</div>
                   </div>
-                  <div class="master masters__item col-sm">
-                    <div class="master-card__foto">
-                      <img class="master-card__img" src="/img/photo3.jpg" alt="">
+                  <div class="masters__item col-sm">
+                    <div class="master-card ">
+                      <div class="master-card__foto">
+                        <img class="master-card__img" src="/img/photo3.jpg" alt="">
+                      </div>
+                      <div class="master-card__name">Киселева Алина</div>
+                      <div class="master-card__descr">Парикмахер</div>
+                      <div class="master-card__experience">опыт работы 5 лет</div>
                     </div>
-                    <div class="master-card__name">Киселева Алина</div>
-                    <div class="master-card__descr">Парикмахер</div>
-                    <div class="master-card__experience">опыт работы 5 лет</div>
                   </div>
-                  <div class="master masters__item col-sm">
-                    <div class="master-card__foto">
-                      <img class="master-card__img" src="/img/photo4.png" alt="">
+                  <div class="masters__item col-sm">
+                    <div class="master-card ">
+                      <div class="master-card__foto">
+                        <img class="master-card__img" src="/img/photo4.png" alt="">
+                      </div>
+                      <div class="master-card__name">Иванова Елена</div>
+                      <div class="master-card__descr">Мастер ногтевого сервиса</div>
+                      <div class="master-card__experience">опыт работы 5 лет</div>
                     </div>
-                    <div class="master-card__name">Иванова Елена</div>
-                    <div class="master-card__descr">Мастер ногтевого сервиса</div>
-                    <div class="master-card__experience">опыт работы 5 лет</div>
                   </div>
                 </div>
-
               </div>
             </section>
 

@@ -21,13 +21,12 @@
         bottom: 0;
         z-index: 0;
         opacity: 0;
-            
+        transition: all 0.3s;    
     }
 
     &__link_vk::after {
         background: url(#{$img_path}/vk_2.png)  0px 0px  no-repeat ;  
         background-size: 100%;  
-       // opacity: 0;
     }
     
     &__link_inst::after {

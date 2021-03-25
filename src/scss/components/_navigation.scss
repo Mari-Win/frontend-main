@@ -1,7 +1,6 @@
 /*
 * NAVIGATION
 */
-
 .navigation {
     list-style: none;
     list-style-image: none;
@@ -12,23 +11,23 @@
         font-size: 14px;
         line-height: 17.07px;
         font-weight: 500;
-        white-space: nowrap;
         color: #333333;
-        margin-right: 28px;
     }
 
     &__link:hover {
         color: #00bf78;
         text-decoration: none;        
     }
-
+    
     &__item {
         padding-bottom: 6px;
+        white-space: nowrap;
     }
 
-    &__link:not(:last-child) {
+    &__item:not(:last-child) {
         margin-right: 28px;
     }
+
 }
 
 .menu-popup {
