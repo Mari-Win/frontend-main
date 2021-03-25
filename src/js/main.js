@@ -15,12 +15,14 @@ function slideToggleElement(element){
 //example from https://gnatkovsky.com.ua/yakorya-i-plavnyj-perexod-po-yakornym-ssylkam.html
 
 function scrollTo(id_navigation){
-    $(id_navigation).on("click","a", function (event) {
+    $(id_navigation).on('click','a', function (event) {
         event.preventDefault();
         const id  = $(this).attr('href'),
             top = $(id).offset().top;                  
         $('body,html').animate({scrollTop: top}, 1500);
-        slideToggleElement($menu_popup);
+        if(id_navigation === '#navigation-popup') {
+          slideToggleElement($menu_popup);  
+        }
     });
 }
 
@@ -61,15 +63,15 @@ $('.carousel').slick({
           slidesToScroll: 1
         }
       }
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
     ]
   });
 
 /* menu popup*/
 	$(".navigation-humb, .menu-popup__close").on("click", function () {
     slideToggleElement($menu_popup);
+    /*if($menu_popup[0].clientHeight > window.innerHeight) {
+      $menu_popup[0].style.height = window.innerHeight;
+    }*/
     return false;
 });		
 	
@@ -80,7 +82,7 @@ $('.carousel').slick({
 		}
 	});
 
-  /*const form = document.getElementById('contact-form');
+  const form = document.getElementById('contact-form');
 
   form.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -89,5 +91,5 @@ $('.carousel').slick({
       name: name.value,
       phone: phone.value
     });
-  });*/
+  });
 });

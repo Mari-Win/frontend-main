@@ -101,6 +101,14 @@ $img-path: "/img";
     .navigation-humb {
         display: flex;
     }
+
+    .price__item {
+        width: 100%;
+    }
+
+    .pricelist__items {
+        padding-right: 0;
+    }
 }
 
 /* Extra Small Devices, Phones */
