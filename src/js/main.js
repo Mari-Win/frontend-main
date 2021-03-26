@@ -28,9 +28,9 @@ function scrollTo(id_navigation){
 }
 
 $(document).ready(function(){
-    scrollTo("#navigation-popup");
-    scrollTo("#navigation-top");    
-    scrollTo("#navigation-footer");      
+    scrollTo('#navigation-popup');
+    scrollTo('#navigation-top');    
+    scrollTo('#navigation-footer');      
 
 
 /** slick slider */
@@ -38,8 +38,8 @@ $('.carousel').slick({
     slidesToShow:4,
     slidesToScroll: 1,   
     speed:200,
-    prevArrow:document.getElementById("slick-prev"),
-    nextArrow:document.getElementById("slick-next"),
+    prevArrow:document.getElementById('slick-prev'),
+    nextArrow:document.getElementById('slick-next'),
     responsive: [
       {
         breakpoint: 1110,
@@ -68,7 +68,7 @@ $('.carousel').slick({
   });
 
 /** menu popup */
-	$(".navigation-humb, .menu-popup__close").on("click", function () {
+	$('.navigation-humb, .menu-popup__close').on('click', function () {
     slideToggleElement($menu_popup);
     return false;
 });		
