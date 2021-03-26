@@ -1,3 +1,4 @@
+/** menu popup */
 const $menu_popup = $('.menu-popup');
 
 function slideToggleElement(element){
@@ -32,7 +33,7 @@ $(document).ready(function(){
     scrollTo("#navigation-footer");      
 
 
-/* slick slider */
+/** slick slider */
 $('.carousel').slick({    
     slidesToShow:4,
     slidesToScroll: 1,   
@@ -66,12 +67,9 @@ $('.carousel').slick({
     ]
   });
 
-/* menu popup*/
+/** menu popup */
 	$(".navigation-humb, .menu-popup__close").on("click", function () {
     slideToggleElement($menu_popup);
-    /*if($menu_popup[0].clientHeight > window.innerHeight) {
-      $menu_popup[0].style.height = window.innerHeight;
-    }*/
     return false;
 });		
 	
@@ -82,6 +80,7 @@ $('.carousel').slick({
 		}
 	});
 
+  /** Contact form text */
   const form = document.getElementById('contact-form');
 
   form.addEventListener('submit', function(event) {
@@ -92,4 +91,11 @@ $('.carousel').slick({
       phone: phone.value
     });
   });
+
+  /** Expandable text */
+  const textElems = document.querySelectorAll('.expandable-text'); 
+   
+  for (const el of textElems) { 
+    new ExpandableText(el, 395); 
+  } 
 });

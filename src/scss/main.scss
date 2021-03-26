@@ -76,6 +76,10 @@ $img-path: "/img";
         padding: 0;
     }
 
+    .advantages .col-sm {        
+        padding: 0 5px; 
+    }
+
     h1 {
         width: 100%;
         font-size: 3em;
@@ -92,6 +96,7 @@ $img-path: "/img";
         flex-direction: row;
         display: flex;
         justify-content: center;
+        right: 0px;
     }
 
     .header .social .social__item:not(:last-child) {
@@ -151,6 +156,11 @@ $img-path: "/img";
         width: auto;
         margin-bottom: 10px;
     }
+
+    .footer .navigation {
+        overflow: auto;
+        justify-content: unset;
+    }
 }
 
 /* Custom, iPhone Retina */
@@ -191,4 +201,19 @@ $img-path: "/img";
         width: auto;
         margin-bottom: 10px;
     }
+
+    .pop-item {
+        &__img {
+            width: auto;
+            max-width: 90vw;
+        }
+    }
+
+    .popular__item {
+        width: auto;
+        max-width: 90vw;
+        min-width: 290px;
+    }
+
+    
 }
