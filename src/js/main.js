@@ -1,45 +1,44 @@
-/** menu popup */
-const $menu_popup = $('.menu-popup');
+import TabsManager from './tabs.js';
+import ExpandableText from './expandable.js';
 
-function slideToggleElement(element){
-  element.slideToggle(300, function(){
-    if (element.is(':hidden')) {
-      $('body').removeClass('body_pointer');
-    } else {
-      $('body').addClass('body_pointer');
-    }					
-  }); 
+/** menu popup */
+const $menuPopup = $('.menu-popup');
+
+function slideToggleElement(element) {
+  element.slideToggle(300, function () {
+    $('body').toggleClass('body_pointer', element.is(':hidden'));
+  });
   return false;
 }
 
 /** плавный переход по ссылкам */
 //example from https://gnatkovsky.com.ua/yakorya-i-plavnyj-perexod-po-yakornym-ssylkam.html
 
-function scrollTo(id_navigation){
-    $(id_navigation).on('click','a', function (event) {
-        event.preventDefault();
-        const id  = $(this).attr('href'),
-            top = $(id).offset().top;                  
-        $('body,html').animate({scrollTop: top}, 1500);
-        if(id_navigation === '#navigation-popup') {
-          slideToggleElement($menu_popup);  
-        }
-    });
+function scrollTo(id_navigation) {
+  $(id_navigation).on('click', 'a', function (event) {
+    event.preventDefault();
+    const id = $(this).attr('href'),
+      top = $(id).offset().top;
+    $('body,html').animate({ scrollTop: top }, 1500);
+    if (id_navigation === '#navigation-popup') {
+      slideToggleElement($menuPopup);
+    }
+  });
 }
 
-$(document).ready(function(){
-    scrollTo('#navigation-popup');
-    scrollTo('#navigation-top');    
-    scrollTo('#navigation-footer');      
+$(document).ready(function () {
+  scrollTo('#navigation-popup');
+  scrollTo('#navigation-top');
+  scrollTo('#navigation-footer');
 
 
-/** slick slider */
-$('.carousel').slick({    
-    slidesToShow:4,
-    slidesToScroll: 1,   
-    speed:200,
-    prevArrow:document.getElementById('slick-prev'),
-    nextArrow:document.getElementById('slick-next'),
+  /** slick slider */
+  $('.carousel').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    speed: 200,
+    prevArrow: document.getElementById('slick-prev'),
+    nextArrow: document.getElementById('slick-next'),
     responsive: [
       {
         breakpoint: 1110,
@@ -67,25 +66,25 @@ $('.carousel').slick({
     ]
   });
 
-/** menu popup */
-	$('.navigation-humb, .menu-popup__close').on('click', function () {
-    slideToggleElement($menu_popup);
+  /** menu popup */
+  $('.navigation-humb, .menu-popup__close').on('click', function () {
+    slideToggleElement($menuPopup);
     return false;
-});		
-	
-	$(document).on('click', function(e){
-		if (!$(e.target).closest('.menu-popup').length){
-			$('body').removeClass('body_pointer');
-			$menu_popup.slideUp(300);
-		}
-	});
+  });
+
+  $(document).on('click', function (e) {
+    if (!$(e.target).closest('.menu-popup').length) {
+      $('body').removeClass('body_pointer');
+      $menuPopup.slideUp(300);
+    }
+  });
 
   /** Contact form text */
   const form = document.getElementById('contact-form');
 
-  form.addEventListener('submit', function(event) {
+  form.addEventListener('submit', function (event) {
     event.preventDefault();
-    const {name, phone} = form.elements;
+    const { name, phone } = form.elements;
     console.log({
       name: name.value,
       phone: phone.value
@@ -93,9 +92,14 @@ $('.carousel').slick({
   });
 
   /** Expandable text */
-  const textElems = document.querySelectorAll('.expandable-text'); 
-   
-  for (const el of textElems) { 
-    new ExpandableText(el, 395); 
-  } 
+  const textElems = document.querySelectorAll('.expandable-text');
+
+  for (const el of textElems) {
+    new ExpandableText(el, 395);
+  }
+
+  
+  /** Price Tabs */
+  const tabsElem = document.getElementById('price');
+  new TabsManager(tabsElem);
 });

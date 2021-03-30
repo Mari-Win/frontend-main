@@ -57,4 +57,4 @@ class TabItem {
     new TabsManager(tabsElem); 
   });
   
-  
+  export default TabsManager;
