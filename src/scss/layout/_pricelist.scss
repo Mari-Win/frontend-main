@@ -8,7 +8,7 @@
         flex-flow: wrap;
         justify-content: space-between;
         align-content: flex-start;
-        padding-right: 92px;
+        max-width: 980px;
     }
     
     &__nav {
@@ -34,7 +34,6 @@
         font-weight: 500;
         line-height: 22px;
         margin-bottom: 8px;
-        white-space: nowrap;
     }
 
     &__addition {

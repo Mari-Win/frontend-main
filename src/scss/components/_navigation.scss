@@ -1,39 +1,88 @@
 /*
 * NAVIGATION
 */
-
 .navigation {
     list-style: none;
     list-style-image: none;
     display: flex;
-    justify-content: center;    
+    justify-content: center;
 
     &__link {
         font-size: 14px;
         line-height: 17.07px;
         font-weight: 500;
-        white-space: nowrap;
         color: #333333;
     }
 
     &__link:hover {
         color: #00bf78;
+        text-decoration: none;
     }
 
     &__item {
-        font-size: 14px;
         padding-bottom: 6px;
+        white-space: nowrap;
+        cursor: pointer;
     }
 
     &__item:not(:last-child) {
         margin-right: 28px;
     }
+}
 
-    &__item_active {
-        border-bottom: 2px solid #00bf78;
+.menu-popup {
+    display: none;
+    background: #ffffff;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0;
+    box-sizing: border-box;
+    padding: 30px;
+    z-index: 999;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    overflow: scroll;
+    max-height: 100vh;
+    min-width: min-content;
+
+    &__close {
+        display: block;
+        width: 28px;
+        height: 28px;
+        background: url(#{$img-path}/close.png) 0 0 repeat;
+        background-size: 100%;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 100;
     }
 
-    &__item_active &__link {
-        color: #00bf78;
+    &__nav {
+        flex-direction: column;
     }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+        margin: 10px 0;
+        padding: 0;
+    }
+
+    li a {
+        font-size: 18px;
+        color: rgb(2, 2, 2);
+        line-height: 1.4;
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+        border-bottom: 1px solid #eeeeee;
+    }
+}
+
+.body_pointer * {
+    cursor: pointer;
 }

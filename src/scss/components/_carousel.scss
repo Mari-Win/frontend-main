@@ -16,6 +16,7 @@
         margin: auto;
         position: relative;
         transition: transform 2s cubic-bezier(0.08, 0.43, 0.24, 1);
+        outline:none;
     }
 
     &__img-wrapper:hover {
@@ -99,6 +100,7 @@
 
     button:hover {
         background-color: #F8F6F7;
+        cursor: pointer;
     }
 }
 
