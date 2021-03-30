@@ -3,15 +3,11 @@ import ExpandableText from './expandable.js';
 import OrderForm from './forms/order-form';
 
 /** menu popup */
-const $menu_popup = $('.menu-popup');
+const $menuPopup = $('.menu-popup');
 
 function slideToggleElement(element) {
   element.slideToggle(300, function () {
-    if (element.is(':hidden')) {
-      $('body').removeClass('body_pointer');
-    } else {
-      $('body').addClass('body_pointer');
-    }
+    $('body').toggleClass('body_pointer', element.is(':hidden'));
   });
   return false;
 }
@@ -26,7 +22,7 @@ function scrollTo(id_navigation) {
       top = $(id).offset().top;
     $('body,html').animate({ scrollTop: top }, 1500);
     if (id_navigation === '#navigation-popup') {
-      slideToggleElement($menu_popup);
+      slideToggleElement($menuPopup);
     }
   });
 }
@@ -73,14 +69,14 @@ $(function () {
 
   /** menu popup */
   $('.navigation-humb, .menu-popup__close').on('click', function () {
-    slideToggleElement($menu_popup);
+    slideToggleElement($menuPopup);
     return false;
   });
 
   $(document).on('click', function (e) {
     if (!$(e.target).closest('.menu-popup').length) {
       $('body').removeClass('body_pointer');
-      $menu_popup.slideUp(300);
+      $menuPopup.slideUp(300);
     }
   });
 
