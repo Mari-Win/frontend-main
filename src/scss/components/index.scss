@@ -1,4 +1,4 @@
-$img-path: "/img" !default;
+$img-path: "../img";
 
 @import "button";
 @import "humburger";
@@ -7,3 +7,4 @@ $img-path: "/img" !default;
 @import "social";
 @import "signupform";
 @import "tabs";
+@import "loader";

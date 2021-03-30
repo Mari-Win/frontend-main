@@ -5,14 +5,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" type="image/png" href="favicon.ico" />
+  <link rel="shortcut icon" type="image/png" href="./img/favicon.ico" />
   <title>Мир красоты</title>
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap-grid.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./css/main.css">
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <!--link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" /-->
+  <link rel="stylesheet" href="./slick/slick.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 </head>
 
@@ -58,7 +59,7 @@
         <div class="hero">
           <h1>Создай свой образ вместе с нами</h1>
           <p>Идеальный образ за 60 минут</p>
-          <button class="btn">Записаться онлайн</button>
+          <button data-fancybox data-src="#request" class="btn">Записаться онлайн</button>
         </div>
 
         <div class="header-girl">
@@ -97,7 +98,7 @@
                   преображения в салоне «Мир красоты».
                   <br>Задумайтесь: в мире не существует другого такого же человека, как Вы. Вы – единственная. Вы –
                   стиль. Вы – мир. Мы помогаем нашим клиентам воплотить их индивидуальность во внешнем облике.
-                  <br>Мы создаем стиль – вместе с Вами и для Вас!                  
+                  <br>Мы создаем стиль – вместе с Вами и для Вас!
                 </p>
               </div>
             </div>
@@ -398,7 +399,7 @@
             <div class="masters__item col-sm">
               <div class="master-card ">
                 <div class="master-card__foto">
-                  <img class="master-card__img" src="/img/photo1.jpg" alt="">
+                  <img class="master-card__img" src="./img/photo1.jpg" alt="">
                 </div>
                 <div class="master-card__name">Краснова Ирина</div>
                 <div class="master-card__descr">Мастер ногтевого сервиса</div>
@@ -408,7 +409,7 @@
             <div class="masters__item col-sm">
               <div class="master-card ">
                 <div class="master-card__foto">
-                  <img class="master-card__img" src="/img/photo2.jpg" alt="">
+                  <img class="master-card__img" src="./img/photo2.jpg" alt="">
                 </div>
                 <div class="master-card__name">Калилова Жанна</div>
                 <div class="master-card__descr">Визажист-стилист</div>
@@ -418,7 +419,7 @@
             <div class="masters__item col-sm">
               <div class="master-card ">
                 <div class="master-card__foto">
-                  <img class="master-card__img" src="/img/photo3.jpg" alt="">
+                  <img class="master-card__img" src="./img/photo3.jpg" alt="">
                 </div>
                 <div class="master-card__name">Киселева Алина</div>
                 <div class="master-card__descr">Парикмахер</div>
@@ -428,7 +429,7 @@
             <div class="masters__item col-sm">
               <div class="master-card ">
                 <div class="master-card__foto">
-                  <img class="master-card__img" src="/img/photo4.png" alt="">
+                  <img class="master-card__img" src="./img/photo4.png" alt="">
                 </div>
                 <div class="master-card__name">Иванова Елена</div>
                 <div class="master-card__descr">Мастер ногтевого сервиса</div>
@@ -452,59 +453,59 @@
         <div class="works__carousel">
           <div class="carousel row">
             <div class="carousel__item col">
-              <a href="img/work1.jpg" data-fancybox="gallery" data-caption="Work #1">
+              <a href="./img/work1.jpg" data-fancybox="gallery" data-caption="Work #1">
                 <div class="carousel__img-wrapper">
-                  <img class="carousel__img" src="img/work1.jpg" />
+                  <img class="carousel__img" src="./img/work1.jpg" />
                 </div>
               </a>
             </div>
             <div class="carousel__item col">
-              <a href="img/work2.jpg" data-fancybox="gallery" data-caption="Work #2">
+              <a href="./img/work2.jpg" data-fancybox="gallery" data-caption="Work #2">
                 <div class="carousel__img-wrapper">
-                  <img class="carousel__img" src="img/work2.jpg" />
+                  <img class="carousel__img" src="./img/work2.jpg" />
                 </div>
               </a>
             </div>
             <div class="carousel__item col">
-              <a href="img/work3.jpg" data-fancybox="gallery" data-caption="Work #3">
+              <a href="./img/work3.jpg" data-fancybox="gallery" data-caption="Work #3">
                 <div class="carousel__img-wrapper">
-                  <img class="carousel__img" src="img/work3.jpg" />
+                  <img class="carousel__img" src="./img/work3.jpg" />
                 </div>
               </a>
             </div>
             <div class="carousel__item col">
-              <a href="img/work4.jpg" data-fancybox="gallery" data-caption="Work #4">
+              <a href="./img/work4.jpg" data-fancybox="gallery" data-caption="Work #4">
                 <div class="carousel__img-wrapper">
-                  <img class="carousel__img" src="img/work4.jpg" />
+                  <img class="carousel__img" src="./img/work4.jpg" />
                 </div>
               </a>
             </div>
             <div class="carousel__item col">
-              <a href="img/work-6.jpg" data-fancybox="gallery" data-caption="Work #6">
+              <a href="./img/work-6.jpg" data-fancybox="gallery" data-caption="Work #6">
                 <div class="carousel__img-wrapper">
-                  <img class="carousel__img" src="img/work-6.jpg" />
+                  <img class="carousel__img" src="./img/work-6.jpg" />
                 </div>
               </a>
             </div>
             <div class="carousel__item col">
-              <a href="img/work-5.jpg" data-fancybox="gallery" data-caption="Work #5">
+              <a href="./img/work-5.jpg" data-fancybox="gallery" data-caption="Work #5">
                 <div class="carousel__img-wrapper">
-                  <img class="carousel__img" src="img/work-5.jpg" />
+                  <img class="carousel__img" src="./img/work-5.jpg" />
                 </div>
               </a>
             </div>
             <div class="carousel__item col">
-              <a href="img/work-9.jpg" data-fancybox="gallery" data-caption="Work #9">
+              <a href="./img/work-9.jpg" data-fancybox="gallery" data-caption="Work #9">
                 <div class="carousel__img-wrapper">
-                  <img class="carousel__img" src="img/work-9.jpg" />
+                  <img class="carousel__img" src="./img/work-9.jpg" />
                 </div>
               </a>
             </div>
 
             <div class="carousel__item col">
-              <a href="img/work-7.jpg" data-fancybox="gallery" data-caption="Work #7">
+              <a href="./img/work-7.jpg" data-fancybox="gallery" data-caption="Work #7">
                 <div class="carousel__img-wrapper">
-                  <img class="carousel__img" src="img/work-7.jpg" />
+                  <img class="carousel__img" src="./img/work-7.jpg" />
                 </div>
               </a>
             </div>
@@ -609,13 +610,67 @@
       </div>
     </footer>
   </div>
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <div class="hidden" id="request">
+    <div class="signupform  contacts__signupform">
+
+    <h3>Записаться</h3>
+
+    <form action="" class="order-form" id="order-form">
+      <div class="order-form__inner">
+        <label for="name">Ваше имя</label>
+        <input type="text" name="name" class="signupform__input" required maxlength="25" minlength="3"
+        placeholder="Ваше имя" title="Введите Ваше имя">
+      </div>
+
+      <div class="form-control">
+        <label for="phone">Номер телефона</label>
+        <input name="phone" class="signupform__input" type="tel" required maxlength="16" minlength="5"
+        placeholder="+7 (___) ___-__-__" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
+        title="Введите Ваш номер телефона">
+      </div>
+
+      <div class="form-control">
+        <label for="master">Выберите мастера</label>
+        <select name="masterId" id="" class="signupform__input">
+          <option value="">Не выбран</option>
+        </select>
+      </div>
+
+      <div class="form-control">
+        <label for="visitDate" >Дата визита</label>
+        <input type="date" name="visitDate"  class="signupform__input">
+      </div>
+
+      <button type="submit" class="btn">Отправить</button>
+      
+      <div class="loader order-form__loader hidden" title="2">
+
+        <svg version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+          y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+          <circle fill="#e74c3c" stroke="none" cx="6" cy="50" r="6">
+            <animateTransform attributeName="transform" dur="1s" type="translate" values="0 15 ; 0 -15; 0 15"
+              repeatCount="indefinite" begin="0.1" />
+          </circle>
+          <circle fill="#e74c3c" stroke="none" cx="30" cy="50" r="6">
+            <animateTransform attributeName="transform" dur="1s" type="translate" values="0 10 ; 0 -10; 0 10"
+              repeatCount="indefinite" begin="0.2" />
+          </circle>
+          <circle fill="#e74c3c" stroke="none" cx="54" cy="50" r="6">
+            <animateTransform attributeName="transform" dur="1s" type="translate" values="0 5 ; 0 -5; 0 5"
+              repeatCount="indefinite" begin="0.3" />
+          </circle>
+        </svg>
+
+      </div>
+    </form>
+  </div>
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="./slick/slick.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-  <script src="./js/main.js"></script>
-  <script src="./js/tabs.js"></script>
-  <script src="./js/expandable.js"></script>
+
+  <script src="./js/main.min.js"></script>
 </body>
 
 </html>

@@ -29,6 +29,20 @@
         background-color: #F8F6F7;
     }
 
+    &__select {
+        border: 1px solid #D8D8D8;
+        border-radius: 4px;
+        padding: 16px;
+        margin-bottom: 20px;
+        width: 100%;
+        color: #A0A0A0;
+        font-size: 14px;
+    }
+
+    &__input:focus {
+        background-color: #F8F6F7;
+    }
+
     &__btn {
         width: 100%;
         margin-bottom: 16px;

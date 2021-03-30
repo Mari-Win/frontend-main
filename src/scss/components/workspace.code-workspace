@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\.."
+		},
+		{
+			"name": "frontend-main @ master",
+			"uri": "gitlens://master/d:/FRONTEND/frontend-main?{\"path\":\"/d:/FRONTEND/frontend-main\",\"ref\":\"master\",\"repoPath\":\"d:/FRONTEND/frontend-main\"}"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "frontend-main"
+	}
+}

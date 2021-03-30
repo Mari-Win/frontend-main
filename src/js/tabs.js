@@ -51,10 +51,5 @@ class TabItem {
       this.activeTab.activate(); 
     } 
   } 
-
-  $(document).ready(function(){
-    const tabsElem = document.getElementById('price'); 
-    new TabsManager(tabsElem); 
-  });
   
-  
+export default TabsManager;

@@ -39,3 +39,5 @@ class ExpandableText {
         return (this.originalText.slice(0, this.maxLength)) + '...';
     }
 }
+
+export default ExpandableText;
