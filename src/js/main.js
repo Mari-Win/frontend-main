@@ -81,7 +81,7 @@ $(function () {
   });
 
   /** Contact form text */
-  const form = document.getElementById('contact-form');
+  /*const form = document.getElementById('contact-form');
 
   form.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -90,7 +90,7 @@ $(function () {
       name: name.value,
       phone: phone.value
     });
-  });
+  });*/
 
   /** Expandable text */
   const textElems = document.querySelectorAll('.expandable-text');
@@ -102,4 +102,7 @@ $(function () {
   /** Price Tabs */
   const tabsElem = document.getElementById('price');
   new TabsManager(tabsElem);
+
+  new OrderForm('order-form');
+  new OrderForm('order-form-short');
 });

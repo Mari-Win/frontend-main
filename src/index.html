@@ -59,7 +59,7 @@
         <div class="hero">
           <h1>Создай свой образ вместе с нами</h1>
           <p>Идеальный образ за 60 минут</p>
-          <button data-fancybox data-src="#request" class="btn">Записаться онлайн</button>
+          <button data-fancybox data-src="#order-request" class="btn">Записаться онлайн</button>
         </div>
 
         <div class="header-girl">
@@ -564,7 +564,7 @@
                 <p class="signupform__text">Наш менеджер перезвонит в течение нескольких минут, уточнит подробности и
                   согласует время.
                 </p>
-                <form id="contact-form">
+                <form id="order-form-short">
                   <input name="name" class="signupform__input" type="text" required maxlength="25" minlength="3"
                     placeholder="Ваше имя" title="Введите Ваше имя" />
                   <input name="phone" class="signupform__input" type="tel" required maxlength="16" minlength="5"
@@ -610,12 +610,12 @@
       </div>
     </footer>
   </div>
-  <div class="hidden" id="request">
+  <div class="hidden" id="order-request">
     <div class="signupform  contacts__signupform">
 
     <h3>Записаться</h3>
 
-    <form action="" class="order-form" id="order-form">
+    <form action="POST" class="order-form" id="order-form">
       <div class="order-form__inner">
         <label for="name">Ваше имя</label>
         <input type="text" name="name" class="signupform__input" required maxlength="25" minlength="3"
@@ -637,14 +637,20 @@
       </div>
 
       <div class="form-control">
+        <label for="service">Выберите услугу</label>
+        <select name="serviceId" id="" class="signupform__input">
+          <option value="">Не выбран</option>
+        </select>
+      </div>
+
+      <div class="form-control">
         <label for="visitDate" >Дата визита</label>
         <input type="date" name="visitDate"  class="signupform__input">
       </div>
 
       <button type="submit" class="btn">Отправить</button>
       
-      <div class="loader order-form__loader hidden" title="2">
-
+      <div class="loader order-form__loader" title="2">
         <svg version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
           y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
           <circle fill="#e74c3c" stroke="none" cx="6" cy="50" r="6">
@@ -660,8 +666,8 @@
               repeatCount="indefinite" begin="0.3" />
           </circle>
         </svg>
-
       </div>
+      <div id="order-form__send" class="order-form__send">Ваша заявка отправлена! В ближайшее время с вами свяжется менеджер.</div>
     </form>
   </div>
 
