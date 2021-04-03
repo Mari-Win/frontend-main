@@ -58,14 +58,21 @@
         display: none;
     }
 
-    &__send { 
+    &__send,
+    &-short__send {
         display: none;
     }
 
-    &__send_visible{        
+    &__send_visible,
+    &-short__send_visible {
         display: block;
+        background: #22a543;
+        text-align: center;
+        color: white;
+        border-radius: 16px;
+        padding: 5px;
+        margin-bottom: 15px;
     }
-
 
     &_pending {
         .form-control,
@@ -75,6 +82,11 @@
 
         .order-form__loader {
             display: block;
+        }
+
+        .order-form-short__inner,
+        .order-form__inner {
+            display: none;
         }
     }
 }

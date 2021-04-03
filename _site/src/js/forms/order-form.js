@@ -4,6 +4,7 @@ class OrderForm {
     constructor(formId) {
         this.pending = false;
         this.send = false;
+        this.formId = formId;
         this.formEl = document.getElementById(formId);
 
         if(this.formEl.elements.masterId) {
@@ -63,7 +64,7 @@ class OrderForm {
     _bindEvents() {
         this.formEl.addEventListener('submit', (event) => {
             event.preventDefault();
-            this._handleForm();
+            this._handleForm();                 
         });        
     }
 
@@ -86,8 +87,8 @@ class OrderForm {
                 if(orderResponse.status === 'Opened') {
                     this._toggleSendState();
                     setTimeout(() => {     
-                        this._toggleSendState();                     
-                        document.querySelector("#request > button").click(); 
+                        this._toggleSendState();                                            
+                        $.fancybox.close()
                     }, 3000);                   
                 };
 
@@ -108,7 +109,7 @@ class OrderForm {
 
     _toggleSendState() {
         this.send = !this.send;
-        document.getElementById('order-form__send').classList.toggle('order-form__send_visible', this.send);
+        document.getElementById(this.formId + '__send').classList.toggle(this.formId + '__send_visible', this.send);
     }
 }
 

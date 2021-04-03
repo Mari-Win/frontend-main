@@ -1,3 +1,4 @@
+import 'inputmask';
 import TabsManager from './tabs.js';
 import ExpandableText from './expandable.js';
 import OrderForm from './forms/order-form';
@@ -103,6 +104,47 @@ $(function () {
   const tabsElem = document.getElementById('price');
   new TabsManager(tabsElem);
 
+  /**
+   * Input mask for phones
+   */
+  let selector = document.getElementsByClassName('order-form__phone');
+  Array.from(selector).forEach(element => {
+    Inputmask({'mask': '+7-(999)-999-99-99'}).mask(element);
+  });
+
+  /**
+   * Init forms with data
+   */
   new OrderForm('order-form');
   new OrderForm('order-form-short');
+
+  /**
+   * add selected index for selectbox masters in order-form
+   */
+  $('.master-card')
+    .fancybox({
+      'afterLoad': function () {
+        try {
+          const masterId = this.opts.$orig.context.id.replace('master', '');
+          document.getElementById('order-form').elements.masterId.selectedIndex = masterId;
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    });
+
+    /**
+   * add selected index for selectbox popitem in order-form
+   */
+    $('.pop-item__btn')
+    .fancybox({
+      'afterLoad': function () {
+        try {
+          const serviceId = this.opts.$orig.context.id.replace('pop-item_', '');
+          document.getElementById('order-form').elements.serviceId.selectedIndex = serviceId;
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    });
 });

@@ -144,26 +144,26 @@
               <img src="./img/popular_img.jpg" alt="Маникюр" class="pop-item__img">
               <h4 class="pop-item__header">Маникюр</h4>
               <p class="pop-item__descr">Аппаратный, комбинированный или классический.</p>
-              <button class="btn btn_small pop-item__btn">Записаться</button>
+              <button class="btn btn_small pop-item__btn" data-fancybox data-src="#order-request" id="pop-item_1">Записаться</button>
             </div>
             <div class="popular__item pop-item">
               <img src="./img/popular_img.jpg" alt="Маникюр" class="pop-item__img">
               <h4 class="pop-item__header">Покрытие гель-лак</h4>
               <p class="pop-item__descr">Гель-лак наносится в несколько слоев с использование базы и топа. Каждый слой
                 полимеризуется в LED-лампе.</p>
-              <button class="btn btn_small  pop-item__btn">Записаться</button>
+              <button class="btn btn_small  pop-item__btn" data-fancybox data-src="#order-request" id="pop-item_2">Записаться</button>
             </div>
             <div class="popular__item pop-item">
               <img src="./img/popular_img.jpg" alt="Маникюр" class="pop-item__img">
               <h4 class="pop-item__header">Бразильский маникюр</h4>
               <p class="pop-item__descr">Выполняется в одноразовых перчатках наполненных увлажняющим лосьоном.</p>
-              <button class="btn btn_small  pop-item__btn">Записаться</button>
+              <button class="btn btn_small  pop-item__btn" data-fancybox data-src="#order-request" id="pop-item_3">Записаться</button>
             </div>
             <div class="popular__item pop-item">
               <img src="./img/popular_img.jpg" alt="Маникюр" class="pop-item__img">
               <h4 class="pop-item__header">Педикюр</h4>
               <p class="pop-item__descr">Аппаратный, комбинированный или классический.</p>
-              <button class="btn btn_small pop-item__btn">Записаться</button>
+              <button class="btn btn_small pop-item__btn" data-fancybox data-src="#order-request" id="pop-item_4">Записаться</button>
             </div>
             <div class="popular__item pop-item">
               <img src="./img/popular_img.jpg" alt="Маникюр" class="pop-item__img">
@@ -171,7 +171,7 @@
               <p class="pop-item__descr">Благодаря этой процедуре увлажнение кожи увеличивается на 80%, также выводит
                 токсины и укрепляет суставы.
               </p>
-              <button class="btn btn_small pop-item__btn">Записаться</button>
+              <button class="btn btn_small pop-item__btn" data-fancybox data-src="#order-request" id="pop-item_5">Записаться</button>
             </div>
             <div class="popular__item popular__item_empty"></div>
           </div>
@@ -397,7 +397,7 @@
           <p class="masters__descr">Дружная команда настоящих профессионалов</p>
           <div class="row">
             <div class="masters__item col-sm">
-              <div class="master-card ">
+              <div class="master-card" data-fancybox data-src="#order-request" id="master1">
                 <div class="master-card__foto">
                   <img class="master-card__img" src="./img/photo1.jpg" alt="">
                 </div>
@@ -407,7 +407,7 @@
               </div>
             </div>
             <div class="masters__item col-sm">
-              <div class="master-card ">
+              <div class="master-card" data-fancybox data-src="#order-request" id="master2">
                 <div class="master-card__foto">
                   <img class="master-card__img" src="./img/photo2.jpg" alt="">
                 </div>
@@ -417,7 +417,7 @@
               </div>
             </div>
             <div class="masters__item col-sm">
-              <div class="master-card ">
+              <div class="master-card" data-fancybox data-src="#order-request" id="master3">
                 <div class="master-card__foto">
                   <img class="master-card__img" src="./img/photo3.jpg" alt="">
                 </div>
@@ -427,7 +427,7 @@
               </div>
             </div>
             <div class="masters__item col-sm">
-              <div class="master-card ">
+              <div class="master-card" data-fancybox data-src="#order-request" id="master4">
                 <div class="master-card__foto">
                   <img class="master-card__img" src="./img/photo4.png" alt="">
                 </div>
@@ -561,16 +561,42 @@
             <div class="col">
               <div class="signupform  contacts__signupform">
                 <h5 class="signupform__title">Быстрая запись</h5>
-                <p class="signupform__text">Наш менеджер перезвонит в течение нескольких минут, уточнит подробности и
-                  согласует время.
-                </p>
                 <form id="order-form-short">
-                  <input name="name" class="signupform__input" type="text" required maxlength="25" minlength="3"
-                    placeholder="Ваше имя" title="Введите Ваше имя" />
-                  <input name="phone" class="signupform__input" type="tel" required maxlength="16" minlength="5"
-                    placeholder="+7 (___) ___-__-__" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
-                    title="Введите Ваш номер телефона" />
-                  <button class="btn signupform__btn" type="submit">Записаться</button>
+                  <div id="order-form-short__send" class="order-form__send">Ваша заявка отправлена! В ближайшее время с
+                    вами свяжется менеджер.</div>
+
+                  <div class="order-form-short__inner">
+                    <p class="signupform__text">Наш менеджер перезвонит в течение нескольких минут, уточнит подробности
+                      и
+                      согласует время.
+                    </p>
+                    <input name="name" class="signupform__input" type="text" required maxlength="25" minlength="3"
+                      placeholder="Ваше имя" title="Разрешены символы русского и латинского алфавита, и пробелы" pattern="^[А-Яа-яaA-Za-z]+$" />
+                    <input name="phone" class="signupform__input order-form__phone" type="tel" required maxlength="18" minlength="5"
+                      placeholder="+7-(___)-___-__-__" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
+                      title="Введите Ваш номер телефона" />
+                    <button class="btn signupform__btn" type="submit">Записаться</button>
+                  </div>
+
+                  <div class="loader order-form__loader" title="2">
+                    <svg version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
+                      enable-background="new 0 0 0 0" xml:space="preserve">
+                      <circle fill="#e74c3c" stroke="none" cx="6" cy="50" r="6">
+                        <animateTransform attributeName="transform" dur="1s" type="translate"
+                          values="0 15 ; 0 -15; 0 15" repeatCount="indefinite" begin="0.1" />
+                      </circle>
+                      <circle fill="#e74c3c" stroke="none" cx="30" cy="50" r="6">
+                        <animateTransform attributeName="transform" dur="1s" type="translate"
+                          values="0 10 ; 0 -10; 0 10" repeatCount="indefinite" begin="0.2" />
+                      </circle>
+                      <circle fill="#e74c3c" stroke="none" cx="54" cy="50" r="6">
+                        <animateTransform attributeName="transform" dur="1s" type="translate" values="0 5 ; 0 -5; 0 5"
+                          repeatCount="indefinite" begin="0.3" />
+                      </circle>
+                    </svg>
+                  </div>
+
                 </form>
                 <p class="small-text">Нажимая на кнопку вы соглашаетесь с <a href="#">обработкой персональных данных</a>
                 </p>
@@ -613,70 +639,72 @@
   <div class="hidden" id="order-request">
     <div class="signupform  contacts__signupform">
 
-    <h3>Записаться</h3>
+      <h3>Записаться</h3>
 
-    <form action="POST" class="order-form" id="order-form">
-      <div class="order-form__inner">
-        <label for="name">Ваше имя</label>
-        <input type="text" name="name" class="signupform__input" required maxlength="25" minlength="3"
-        placeholder="Ваше имя" title="Введите Ваше имя">
-      </div>
+      <form action="POST" class="order-form" id="order-form">
+        <div id="order-form__send" class="order-form__send">Ваша заявка отправлена! В ближайшее время с вами свяжется
+          менеджер.</div>
+        <div class="order-form__inner">
+          <div class="form-control">
+            <label for="name">Ваше имя</label>
+            <input type="text" name="name" class="signupform__input" required maxlength="25" minlength="3" pattern="^[А-Яа-яaA-Za-z]+$"
+              placeholder="Ваше имя" title="Разрешены символы русского и латинского алфавита, и пробелы">
+          </div>
 
-      <div class="form-control">
-        <label for="phone">Номер телефона</label>
-        <input name="phone" class="signupform__input" type="tel" required maxlength="16" minlength="5"
-        placeholder="+7 (___) ___-__-__" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
-        title="Введите Ваш номер телефона">
-      </div>
+          <div class="form-control">
+            <label for="phone">Номер телефона</label>
+            <input name="phone" id="order-form-phone" class="signupform__input order-form__phone" type="tel" required maxlength="18" minlength="5"
+              placeholder="+7-(___)-___-__-__" title="Введите Ваш номер телефона">
+          </div>
 
-      <div class="form-control">
-        <label for="master">Выберите мастера</label>
-        <select name="masterId" id="" class="signupform__input">
-          <option value="">Не выбран</option>
-        </select>
-      </div>
+          <div class="form-control">
+            <label for="master">Выберите мастера</label>
+            <select name="masterId" id="" class="signupform__input">
+              <option value="">Не выбран</option>
+            </select>
+          </div>
 
-      <div class="form-control">
-        <label for="service">Выберите услугу</label>
-        <select name="serviceId" id="" class="signupform__input">
-          <option value="">Не выбран</option>
-        </select>
-      </div>
+          <div class="form-control">
+            <label for="service">Выберите услугу</label>
+            <select name="serviceId" id="" class="signupform__input">
+              <option value="">Не выбран</option>
+            </select>
+          </div>
 
-      <div class="form-control">
-        <label for="visitDate" >Дата визита</label>
-        <input type="date" name="visitDate"  class="signupform__input">
-      </div>
+          <div class="form-control">
+            <label for="visitDate">Дата визита</label>
+            <input type="date" name="visitDate" class="signupform__input">
+          </div>
 
-      <button type="submit" class="btn">Отправить</button>
-      
-      <div class="loader order-form__loader" title="2">
-        <svg version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-          y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
-          <circle fill="#e74c3c" stroke="none" cx="6" cy="50" r="6">
-            <animateTransform attributeName="transform" dur="1s" type="translate" values="0 15 ; 0 -15; 0 15"
-              repeatCount="indefinite" begin="0.1" />
-          </circle>
-          <circle fill="#e74c3c" stroke="none" cx="30" cy="50" r="6">
-            <animateTransform attributeName="transform" dur="1s" type="translate" values="0 10 ; 0 -10; 0 10"
-              repeatCount="indefinite" begin="0.2" />
-          </circle>
-          <circle fill="#e74c3c" stroke="none" cx="54" cy="50" r="6">
-            <animateTransform attributeName="transform" dur="1s" type="translate" values="0 5 ; 0 -5; 0 5"
-              repeatCount="indefinite" begin="0.3" />
-          </circle>
-        </svg>
-      </div>
-      <div id="order-form__send" class="order-form__send">Ваша заявка отправлена! В ближайшее время с вами свяжется менеджер.</div>
-    </form>
-  </div>
+          <button type="submit" class="btn">Отправить</button>
+        </div>
+        <div class="loader order-form__loader" title="2">
+          <svg version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+            <circle fill="#e74c3c" stroke="none" cx="6" cy="50" r="6">
+              <animateTransform attributeName="transform" dur="1s" type="translate" values="0 15 ; 0 -15; 0 15"
+                repeatCount="indefinite" begin="0.1" />
+            </circle>
+            <circle fill="#e74c3c" stroke="none" cx="30" cy="50" r="6">
+              <animateTransform attributeName="transform" dur="1s" type="translate" values="0 10 ; 0 -10; 0 10"
+                repeatCount="indefinite" begin="0.2" />
+            </circle>
+            <circle fill="#e74c3c" stroke="none" cx="54" cy="50" r="6">
+              <animateTransform attributeName="transform" dur="1s" type="translate" values="0 5 ; 0 -5; 0 5"
+                repeatCount="indefinite" begin="0.3" />
+            </circle>
+          </svg>
+        </div>        
+      </form>
+    </div>
 
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script type="text/javascript" src="./slick/slick.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="./slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>    
 
-  <script src="./js/main.min.js"></script>
+    <script src="./js/main.min.js"></script>
 </body>
 
 </html>
