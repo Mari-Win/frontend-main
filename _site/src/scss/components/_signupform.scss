@@ -47,6 +47,17 @@
         width: 100%;
         margin-bottom: 16px;
     }
+
+    input.error {
+        border: 1px solid #dc3545;
+        margin-bottom: 5px;
+    }
+
+    label.error {
+        font-size: 70%;
+        color: #dc3545;
+        margin-bottom: 10px;
+    }
 }
 
 .order-form {

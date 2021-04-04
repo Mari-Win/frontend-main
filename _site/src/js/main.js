@@ -81,18 +81,6 @@ $(function () {
     }
   });
 
-  /** Contact form text */
-  /*const form = document.getElementById('contact-form');
-
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    const { name, phone } = form.elements;
-    console.log({
-      name: name.value,
-      phone: phone.value
-    });
-  });*/
-
   /** Expandable text */
   const textElems = document.querySelectorAll('.expandable-text');
 
@@ -105,18 +93,33 @@ $(function () {
   new TabsManager(tabsElem);
 
   /**
-   * Input mask for phones
-   */
-  let selector = document.getElementsByClassName('order-form__phone');
-  Array.from(selector).forEach(element => {
-    Inputmask({'mask': '+7-(999)-999-99-99'}).mask(element);
-  });
-
-  /**
    * Init forms with data
    */
   new OrderForm('order-form');
   new OrderForm('order-form-short');
+
+  /**
+   * Validate forms
+   */
+  function validateForm(formId, formSubmitButtonId) {
+    $(formId).validate();
+    $(formSubmitButtonId).click(function (event) {
+      if (!$(formId).valid()) {
+        event.preventDefault();
+      }
+    });
+  }
+
+  validateForm('#order-form', '#order-form-submit');
+  validateForm('#order-form-short', '#order-form-short-submit');
+
+  /**
+   * Input mask for phones
+   */
+  let selector = document.getElementsByClassName('order-form__phone');
+  Array.from(selector).forEach(element => {
+    Inputmask({ 'mask': '+7-(999)-999-99-99' }).mask(element);
+  });
 
   /**
    * add selected index for selectbox masters in order-form
@@ -124,7 +127,7 @@ $(function () {
   $('.master-card')
     .fancybox({
       'afterLoad': function () {
-        try {
+        try {          
           const masterId = this.opts.$orig.context.id.replace('master', '');
           document.getElementById('order-form').elements.masterId.selectedIndex = masterId;
         } catch (error) {
@@ -133,10 +136,10 @@ $(function () {
       }
     });
 
-    /**
-   * add selected index for selectbox popitem in order-form
-   */
-    $('.pop-item__btn')
+  /**
+ * add selected index for selectbox popitem in order-form
+ */
+  $('.pop-item__btn')
     .fancybox({
       'afterLoad': function () {
         try {

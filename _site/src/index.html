@@ -144,26 +144,30 @@
               <img src="./img/popular_img.jpg" alt="Маникюр" class="pop-item__img">
               <h4 class="pop-item__header">Маникюр</h4>
               <p class="pop-item__descr">Аппаратный, комбинированный или классический.</p>
-              <button class="btn btn_small pop-item__btn" data-fancybox data-src="#order-request" id="pop-item_1">Записаться</button>
+              <button class="btn btn_small pop-item__btn" data-fancybox data-src="#order-request"
+                id="pop-item_1">Записаться</button>
             </div>
             <div class="popular__item pop-item">
               <img src="./img/popular_img.jpg" alt="Маникюр" class="pop-item__img">
               <h4 class="pop-item__header">Покрытие гель-лак</h4>
               <p class="pop-item__descr">Гель-лак наносится в несколько слоев с использование базы и топа. Каждый слой
                 полимеризуется в LED-лампе.</p>
-              <button class="btn btn_small  pop-item__btn" data-fancybox data-src="#order-request" id="pop-item_2">Записаться</button>
+              <button class="btn btn_small  pop-item__btn" data-fancybox data-src="#order-request"
+                id="pop-item_2">Записаться</button>
             </div>
             <div class="popular__item pop-item">
               <img src="./img/popular_img.jpg" alt="Маникюр" class="pop-item__img">
               <h4 class="pop-item__header">Бразильский маникюр</h4>
               <p class="pop-item__descr">Выполняется в одноразовых перчатках наполненных увлажняющим лосьоном.</p>
-              <button class="btn btn_small  pop-item__btn" data-fancybox data-src="#order-request" id="pop-item_3">Записаться</button>
+              <button class="btn btn_small  pop-item__btn" data-fancybox data-src="#order-request"
+                id="pop-item_3">Записаться</button>
             </div>
             <div class="popular__item pop-item">
               <img src="./img/popular_img.jpg" alt="Маникюр" class="pop-item__img">
               <h4 class="pop-item__header">Педикюр</h4>
               <p class="pop-item__descr">Аппаратный, комбинированный или классический.</p>
-              <button class="btn btn_small pop-item__btn" data-fancybox data-src="#order-request" id="pop-item_4">Записаться</button>
+              <button class="btn btn_small pop-item__btn" data-fancybox data-src="#order-request"
+                id="pop-item_4">Записаться</button>
             </div>
             <div class="popular__item pop-item">
               <img src="./img/popular_img.jpg" alt="Маникюр" class="pop-item__img">
@@ -171,7 +175,8 @@
               <p class="pop-item__descr">Благодаря этой процедуре увлажнение кожи увеличивается на 80%, также выводит
                 токсины и укрепляет суставы.
               </p>
-              <button class="btn btn_small pop-item__btn" data-fancybox data-src="#order-request" id="pop-item_5">Записаться</button>
+              <button class="btn btn_small pop-item__btn" data-fancybox data-src="#order-request"
+                id="pop-item_5">Записаться</button>
             </div>
             <div class="popular__item popular__item_empty"></div>
           </div>
@@ -571,11 +576,13 @@
                       согласует время.
                     </p>
                     <input name="name" class="signupform__input" type="text" required maxlength="25" minlength="3"
-                      placeholder="Ваше имя" title="Разрешены символы русского и латинского алфавита, и пробелы" pattern="^[А-Яа-яaA-Za-z]+$" />
-                    <input name="phone" class="signupform__input order-form__phone" type="tel" required maxlength="18" minlength="5"
-                      placeholder="+7-(___)-___-__-__" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
+                      placeholder="Ваше имя" title="Разрешено от 3 до 25 символов русского и латинского алфавита"
+                      pattern="^[А-Яа-яaA-Za-z]+$" />
+                    <input name="phone" class="signupform__input order-form__phone" type="tel" required maxlength="18"
+                      minlength="5" placeholder="+7-(___)-___-__-__"
+                      pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
                       title="Введите Ваш номер телефона" />
-                    <button class="btn signupform__btn" type="submit">Записаться</button>
+                    <button class="btn signupform__btn" type="submit" id="order-form-short-submit">Записаться</button>
                   </div>
 
                   <div class="loader order-form__loader" title="2">
@@ -647,14 +654,16 @@
         <div class="order-form__inner">
           <div class="form-control">
             <label for="name">Ваше имя</label>
-            <input type="text" name="name" class="signupform__input" required maxlength="25" minlength="3" pattern="^[А-Яа-яaA-Za-z]+$"
-              placeholder="Ваше имя" title="Разрешены символы русского и латинского алфавита, и пробелы">
+            <input type="text" name="name" class="signupform__input" required maxlength="25" minlength="3"
+              pattern="^[А-Яа-яaA-Za-z]+$" placeholder="Ваше имя"
+              title="Разрешено от 3 до 25 символов русского и латинского алфавита">
           </div>
 
           <div class="form-control">
             <label for="phone">Номер телефона</label>
-            <input name="phone" id="order-form-phone" class="signupform__input order-form__phone" type="tel" required maxlength="18" minlength="5"
-              placeholder="+7-(___)-___-__-__" title="Введите Ваш номер телефона">
+            <input name="phone" class="signupform__input order-form__phone" type="tel" required
+              maxlength="18" minlength="5" placeholder="+7-(___)-___-__-__" 
+              title="Введите Ваш номер телефона">
           </div>
 
           <div class="form-control">
@@ -676,7 +685,7 @@
             <input type="date" name="visitDate" class="signupform__input">
           </div>
 
-          <button type="submit" class="btn">Отправить</button>
+          <button type="submit" class="btn" id="order-form-submit">Отправить</button>
         </div>
         <div class="loader order-form__loader" title="2">
           <svg version="1.1" id="L5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -694,7 +703,7 @@
                 repeatCount="indefinite" begin="0.3" />
             </circle>
           </svg>
-        </div>        
+        </div>
       </form>
     </div>
 
@@ -702,7 +711,7 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="./slick/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
 
     <script src="./js/main.min.js"></script>
 </body>

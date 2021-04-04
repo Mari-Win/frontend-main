@@ -7,13 +7,13 @@ class OrderForm {
         this.formId = formId;
         this.formEl = document.getElementById(formId);
 
-        if(this.formEl.elements.masterId) {
+        if (this.formEl.elements.masterId) {
             this.mastersSelect = this.formEl.elements.masterId;
         } else {
             this.mastersSelect = 0;
         }
-        
-        if(this.formEl.elements.serviceId) {
+
+        if (this.formEl.elements.serviceId) {
             this.servicesSelect = this.formEl.elements.serviceId;
         } else {
             this.servicesSelect = this.formEl.elements.serviceId;
@@ -32,7 +32,7 @@ class OrderForm {
     }
 
     async _buildMastersSelect() {
-        try{
+        try {
             const masters = await ApiService.getMasters();
 
             masters.forEach(master => {
@@ -40,14 +40,14 @@ class OrderForm {
                 option.value = master.id;
                 option.textContent = `${master.surName} ${master.firstName}`;
                 this.mastersSelect.add(option);
-             });
-        } catch(error) {
+            });
+        } catch (error) {
             console.log(error);
-        }        
+        }
     }
 
     async _buildServicesSelect() {
-        try{
+        try {
             const masters = await ApiService.getSaloonServices();
 
             masters.forEach(service => {
@@ -55,17 +55,17 @@ class OrderForm {
                 option.value = service.id;
                 option.textContent = `${service.name}`;
                 this.servicesSelect.add(option);
-             });
-        } catch(error) {
+            });
+        } catch (error) {
             console.error(error);
-        }        
+        }
     }
 
     _bindEvents() {
         this.formEl.addEventListener('submit', (event) => {
             event.preventDefault();
-            this._handleForm();                 
-        });        
+            this._handleForm();
+        });
     }
 
     async _handleForm() {
@@ -74,29 +74,29 @@ class OrderForm {
             phone: this.formEl.elements.phone.value,
             masterId: (this.formEl.elements.masterId) ? this.formEl.elements.masterId.value : 0,
             serviceId: (this.formEl.elements.serviceId) ? this.formEl.elements.serviceId.value : 0,
-            visitDate: (this.formEl.elements.visitDate) ? this.formEl.elements.visitDate.value :0,
+            visitDate: (this.formEl.elements.visitDate) ? this.formEl.elements.visitDate.value : 0,
         };
 
         this._togglePendingState();
 
-        setTimeout( async() => {
-            try{
+        setTimeout(async () => {
+            try {
                 const orderResponse = await ApiService.createOrder(orderData);
                 this.formEl.reset();
-                
-                if(orderResponse.status === 'Opened') {
+
+                if (orderResponse.status === 'Opened') {
                     this._toggleSendState();
-                    setTimeout(() => {     
-                        this._toggleSendState();                                            
+                    setTimeout(() => {
+                        this._toggleSendState();
                         $.fancybox.close()
-                    }, 3000);                   
+                    }, 3000);
                 };
 
                 //показать сообщение об успехе
                 //закрыть модалку
             } catch (error) {
                 console.error(error);
-            } finally {                
+            } finally {
                 this._togglePendingState();
             }
         }, 3000);
