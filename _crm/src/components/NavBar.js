@@ -1,22 +1,18 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/authContext';
+import { Nav, Button } from 'react-bootstrap';
+import { Navbar as Nbar } from 'react-bootstrap';
 
 export default function NavBar() {
   const { isAuth, logout } = useAuth();
 
   return isAuth ? (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Главная</Link>
-        </li>
-        <li>
-          <Link to="/masters">Мастера</Link>
-        </li>
-        <li>
-          <button onClick={logout}>Logout</button>
-        </li>
-      </ul>
-    </nav>
+    <Nbar bg="light" variant="light">
+      <Nav className="mr-auto">
+        <Nav.Link href="/">Главная</Nav.Link>
+        <Nav.Link href="/masters">Мастера</Nav.Link>
+        <Button onClick={logout} type="submit" variant="outline-primary">Logout</Button>
+      </Nav>
+    </Nbar>
   ) : null;
 }
