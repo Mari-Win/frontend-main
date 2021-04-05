@@ -1,4 +1,5 @@
 import useInput from '../hooks/useInput';
+import { Button, InputGroup, FormControl } from 'react-bootstrap';
 
 export default function AuthForm({ onLogin }) {
   const loginInput = useInput();
@@ -23,17 +24,19 @@ export default function AuthForm({ onLogin }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        <span>Логин</span>
-        <input {...loginInput} placeholder="Введите логин" />
-      </label>
-      <br />
-      <label>
-        <span>Пароль</span>
-        <input {...passwordInput} type="password" placeholder="Введите пароль" />
-      </label>
-      <br />
-      <button>Войти</button>
+      <InputGroup className="mb-3">
+        <InputGroup.Prepend>
+          <InputGroup.Text>Логин</InputGroup.Text>
+        </InputGroup.Prepend>
+        <FormControl  {...loginInput} placeholder="Введите логин" />
+      </InputGroup>
+      <InputGroup className="mb-3">
+        <InputGroup.Prepend>
+          <InputGroup.Text>Пароль</InputGroup.Text>
+        </InputGroup.Prepend>
+        <FormControl {...passwordInput} type="password" placeholder="Введите пароль" />
+      </InputGroup>
+      <Button type="submit" variant="outline-primary">Войти</Button>
     </form>
   );
 }

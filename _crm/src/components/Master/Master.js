@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import bem from 'easy-bem';
 import cn from 'classnames';
+import { Button, InputGroup, FormControl, Card } from 'react-bootstrap';
 import './Master.scss';
 
 import mastersContext from '../../contexts/mastersContext';
@@ -15,15 +16,22 @@ export default function Master({ master, className }) {
   const { removeMaster } = useContext(mastersContext);
 
   return (
-    <div className={_className}>
-      <div className={b('photo')}>
-        <img src={_photo} />
-      </div>
-
-      <div className={b('name')}>{fullName}</div>
-      <div className={b('position')}>{position}</div>
-
-      <button onClick={() => removeMaster(id)}>X</button>
-    </div>
+    <>
+      <Card border="info" style={{ width: '15rem' }} className="m-2">
+        <Card.Header>          
+          <Card.Img className={b('photo')} variant="top" src={_photo} />
+        </Card.Header>
+        <Card.Body>
+          <Card.Title className={b('name')}>{fullName}</Card.Title>
+          <Card.Text  className={b('position')}>
+            {position}
+          </Card.Text>
+          <div className="text-right">
+            <Button onClick={() => removeMaster(id)}  variant="outline-dark"  size="sm" title="Удалить мастера">X</Button>
+            </div>
+        </Card.Body>
+      </Card>
+      <br />
+    </>
   );
 }
