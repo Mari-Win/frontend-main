@@ -28,6 +28,45 @@ function scrollTo(id_navigation) {
   });
 }
 
+/**
+   * Validate forms
+   */
+ function validateForm(formId, formSubmitButtonId) {
+  $.validator.addMethod(
+    "regex",
+    function (value, element, regexp) {
+      var re = new RegExp(regexp);
+      return this.optional(element) || re.test(value);
+    },
+    "Please check your input."
+  );
+
+  $(formId).validate({
+    rules: {
+      name: {
+        required: true,
+        regex: /^[a-zA-ZА-Яа-я'.\\s]{3,25}$/,
+        minlength: 3
+      },
+      phone: {
+        required: true,
+        regex: /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,18}$/,
+        minlength: 7
+      },
+    },
+    messages: {
+      name: "Разрешено от 3 до 25 символов русского и латинского алфавита.",
+      phone: "Введите телефон в указанном формате",
+    },
+  });
+
+  $(formSubmitButtonId).click(function (event) {
+    if (!$(formId).valid()) {
+      event.preventDefault();
+    }
+  });
+}
+
 $(function () {
   scrollTo('#navigation-popup');
   scrollTo('#navigation-top');
@@ -95,21 +134,12 @@ $(function () {
   /**
    * Init forms with data
    */
-  new OrderForm('order-form');
-  new OrderForm('order-form-short');
+  new OrderForm('order-form', true);
+  new OrderForm('order-form-short', false);
 
   /**
    * Validate forms
    */
-  function validateForm(formId, formSubmitButtonId) {
-    $(formId).validate();
-    $(formSubmitButtonId).click(function (event) {
-      if (!$(formId).valid()) {
-        event.preventDefault();
-      }
-    });
-  }
-
   validateForm('#order-form', '#order-form-submit');
   validateForm('#order-form-short', '#order-form-short-submit');
 
@@ -127,7 +157,7 @@ $(function () {
   $('.master-card')
     .fancybox({
       'afterLoad': function () {
-        try {          
+        try {
           const masterId = this.opts.$orig.context.id.replace('master', '');
           document.getElementById('order-form').elements.masterId.selectedIndex = masterId;
         } catch (error) {

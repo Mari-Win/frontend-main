@@ -1,9 +1,11 @@
 import ApiService from '../services/api-service';
 
 class OrderForm {
-    constructor(formId) {
+    constructor(formId, toClose) {
         this.pending = false;
         this.send = false;
+        this.opened = false;
+        this.toclose = toClose;
         this.formId = formId;
         this.formEl = document.getElementById(formId);
 
@@ -88,12 +90,11 @@ class OrderForm {
                     this._toggleSendState();
                     setTimeout(() => {
                         this._toggleSendState();
-                        $.fancybox.close()
+                        if(this.toclose) {
+                            $.fancybox.close();
+                        }
                     }, 3000);
                 };
-
-                //показать сообщение об успехе
-                //закрыть модалку
             } catch (error) {
                 console.error(error);
             } finally {
