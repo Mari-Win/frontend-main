@@ -1,4 +1,4 @@
-node_modules
-dist
-src/css
-src/js/main.min.js
+_site/node_modules
+_site/dist
+_site/src/css
+_site/src/js/main.min.js

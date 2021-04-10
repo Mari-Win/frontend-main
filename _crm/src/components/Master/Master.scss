@@ -1,0 +1,19 @@
+.Master {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+
+  &__photo {
+      object-fit: cover;
+      max-width: 70%;  
+      height: 200px;          
+      display: block;
+      margin: 0 auto;
+      border-radius: 4px;
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
