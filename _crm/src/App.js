@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import HomePage from './pages/Home';
 import MastersPage from './pages/Masters';
+import OrdersPage from './pages/Orders';
 import NotFoundPage from './pages/NotFound';
 import LoginPage from './pages/Login';
 import { AuthProvider } from './contexts/authContext';
@@ -27,6 +28,10 @@ function App() {
 
                 <PrivateRoute path="/masters">
                   <MastersPage />
+                </PrivateRoute>
+
+                <PrivateRoute path="/orders">
+                  <OrdersPage />
                 </PrivateRoute>
 
                 <Route path="/login">

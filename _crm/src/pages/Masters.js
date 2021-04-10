@@ -5,12 +5,12 @@ import MastersContext from '../contexts/mastersContext';
 import ApiService from '../api/api-service';
 
 export default function MastersPage() {
-  const [masters, setMaters] = useState([]);
+  const [masters, setMasters] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       const masters = await ApiService.getMasters();
-      setMaters(masters);
+      setMasters(masters);
     }
 
     fetchData();
@@ -19,14 +19,14 @@ export default function MastersPage() {
   function createMaster(master) {
     const { id } = masters[masters.length - 1];
 
-    setMaters(masters.concat([{
+    setMasters(masters.concat([{
       ...master,
       id: id + 1
     }]));
   }
 
   function removeMaster(id) {
-    setMaters(masters.filter(m => m.id !== id));
+    setMasters(masters.filter(m => m.id !== id));
   }
 
   return (

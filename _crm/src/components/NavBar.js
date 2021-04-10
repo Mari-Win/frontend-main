@@ -11,6 +11,7 @@ export default function NavBar() {
       <Nav className="mr-auto">
         <Nav.Link href="/">Главная</Nav.Link>
         <Nav.Link href="/masters">Мастера</Nav.Link>
+        <Nav.Link href="/orders">Заказы</Nav.Link>
         <Button onClick={logout} type="submit" variant="outline-primary">Logout</Button>
       </Nav>
     </Nbar>
