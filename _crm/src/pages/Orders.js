@@ -34,7 +34,11 @@ export default function OrdersPage() {
   }
 
   function removeOrder(id) {
-    setOrders(orders.filter(o => o.id !== id));
+      ApiService.deleteOrder(id)
+                .then((res) => {
+                    alert(res.message);
+                    setOrders(orders.filter(o => o.id !== id))              
+                });
   }
 
   return (

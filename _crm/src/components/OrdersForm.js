@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
-import { Button, InputGroup, FormControl, Form, Row, Col } from 'react-bootstrap';
+import { Button, InputGroup, Form, Row, Col } from 'react-bootstrap';
 import ApiService from '../api/api-service';
 
 export default function OrdersForm({ onCreate }) {

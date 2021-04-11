@@ -31,6 +31,14 @@ export class HttpService {
     return this._handleResponse(response);
   }
 
+  async delete(path, id) {
+    const response = await fetch(`${this.baseApi}/${path}/${id}`, {
+      method: 'DELETE',
+      headers: this.baseHeaders
+    });    
+    return this._handleDeleteResponse(response);
+  }
+
   async _handleResponse(response) {
     const parsedData = await response.json();
 
@@ -40,6 +48,21 @@ export class HttpService {
 
     if (response.status === 401) {
       PubSub.emit('logout');
+    }
+
+    throw parsedData;
+  }
+
+  async _handleDeleteResponse(response) {
+    let parsedData = {statusCode: '200', message: "Заявка удалена"};
+
+    if (response.status === 200) {     
+      return parsedData;
+    }
+
+    if (response.status === 404) {      
+      parsedData = await response.json();
+      return parsedData;
     }
 
     throw parsedData;
