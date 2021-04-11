@@ -54,7 +54,7 @@ export class HttpService {
   }
 
   async _handleDeleteResponse(response) {
-    let parsedData = {statusCode: '200', message: "Заявка удалена"};
+    let parsedData = {statusCode: '200', message: "Заявка успешно удалена"};
 
     if (response.status === 200) {     
       return parsedData;
