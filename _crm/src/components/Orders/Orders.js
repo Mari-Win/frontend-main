@@ -5,7 +5,7 @@ import Table from 'react-bootstrap/Table';
 
 const b = bem('Orders');
 
-export default function Orders({ orders }) {
+export default function Orders({ orders }) {    
     return (
         <div className={b()}>
             <Table striped bordered hover size="sm">
