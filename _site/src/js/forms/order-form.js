@@ -9,17 +9,8 @@ class OrderForm {
         this.formId = formId;
         this.formEl = document.getElementById(formId);
 
-        if (this.formEl.elements.masterId) {
-            this.mastersSelect = this.formEl.elements.masterId;
-        } else {
-            this.mastersSelect = 0;
-        }
-
-        if (this.formEl.elements.serviceId) {
-            this.servicesSelect = this.formEl.elements.serviceId;
-        } else {
-            this.servicesSelect = this.formEl.elements.serviceId;
-        }
+        this.mastersSelect = (this.formEl.elements.masterId) ? this.formEl.elements.masterId : 0;
+        this.servicesSelect = (this.formEl.elements.serviceId) ? this.formEl.elements.serviceId : 0;
 
         if (this.formEl.elements.masterId) {
             this._init();
@@ -33,14 +24,18 @@ class OrderForm {
         this._buildServicesSelect();
     }
 
+    _createOption(value, content) {
+        const option = document.createElement('option');
+        option.value = value;
+        option.textContent = content;
+        return option;
+    }
+
     async _buildMastersSelect() {
         try {
             const masters = await ApiService.getMasters();
-
             masters.forEach(master => {
-                const option = document.createElement('option');
-                option.value = master.id;
-                option.textContent = `${master.surName} ${master.firstName}`;
+                const option = this._createOption(master.id, `${master.surName} ${master.firstName}`);
                 this.mastersSelect.add(option);
             });
         } catch (error) {
@@ -53,9 +48,7 @@ class OrderForm {
             const masters = await ApiService.getSaloonServices();
 
             masters.forEach(service => {
-                const option = document.createElement('option');
-                option.value = service.id;
-                option.textContent = `${service.name}`;
+                const option = this._createOption(service.id, `${service.name}`);
                 this.servicesSelect.add(option);
             });
         } catch (error) {
@@ -90,7 +83,7 @@ class OrderForm {
                     this._toggleSendState();
                     setTimeout(() => {
                         this._toggleSendState();
-                        if(this.toclose) {
+                        if (this.toclose) {
                             $.fancybox.close();
                         }
                     }, 3000);
