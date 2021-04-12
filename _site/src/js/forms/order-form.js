@@ -46,7 +46,6 @@ class OrderForm {
     async _buildServicesSelect() {
         try {
             const masters = await ApiService.getSaloonServices();
-
             masters.forEach(service => {
                 const option = this._createOption(service.id, `${service.name}`);
                 this.servicesSelect.add(option);
