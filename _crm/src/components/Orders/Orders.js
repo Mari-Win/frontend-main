@@ -19,7 +19,8 @@ export default function Orders({ orders }) {
                         <th>Клиент</th>
                         <th>Статус</th>
                         <th>Финальный статус</th>
-                        <th></th>                        
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>

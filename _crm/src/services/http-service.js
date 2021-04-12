@@ -31,6 +31,18 @@ export class HttpService {
     return this._handleResponse(response);
   }
 
+  async patch(path, id, body) {
+    const stringifiedData = JSON.stringify(body);
+
+    const response = await fetch(`${this.baseApi}/${path}/${id}`, {
+      method: 'PATCH',
+      body: stringifiedData,
+      headers: this.baseHeaders
+    });
+
+    return this._handleResponse(response);
+  }
+
   async delete(path, id) {
     const response = await fetch(`${this.baseApi}/${path}/${id}`, {
       method: 'DELETE',

@@ -19,13 +19,21 @@ export class ApiService extends HttpService {
     return this.post('orders', order);
   }
 
+  editOrder(orderId, order) {
+    return this.patch('orders', orderId, order);
+  }
+
   deleteOrder(orderId) {
     return this.delete('orders', orderId);
   }
 
   getSaloonServices() {
     return this.get('services');
-  }  
+  }
+
+  getCustomers() {
+    return this.get('customers');
+  }
 
   login(authData) {
     return this.post('login', authData);
