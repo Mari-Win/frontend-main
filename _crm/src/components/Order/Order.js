@@ -25,14 +25,12 @@ export default function Order({order, className}) {
 
     const [showEdit, setShowEditWindow] = useState(false);
     const handleCloseEditWindow = () => setShowEditWindow(false);
-    const handleShowEditWindow = () => setShowEditWindow(true);
 
     const {removeOrder} = useContext(ordersContext);
     const {editOrder} = useContext(ordersContext);
 
-    function _handleEditWindow(id, order) {
+    function _handleEditWindow(order) {
         setShowEditWindow(true);
-        console.log('opened');
     }
 
     return (
@@ -77,14 +75,11 @@ export default function Order({order, className}) {
                     <Modal.Title>Редактировать запись</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <OrderEditForm onEdit={editOrder} order={order} id={id}/>
+                    <OrderEditForm onEdit={editOrder} order={order} closeModal={handleCloseEditWindow}/>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleCloseEditWindow}>
                         Close
-                    </Button>
-                    <Button variant="primary" onClick={() => editOrder(id, order)}>
-                        Сохранить
                     </Button>
                 </Modal.Footer>
             </Modal>

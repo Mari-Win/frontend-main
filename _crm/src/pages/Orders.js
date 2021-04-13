@@ -44,21 +44,26 @@ export default function OrdersPage() {
             });
     }
 
-    function editOrder(id, order) {
+    function editOrder(order) {
+        order.status = order.orderStatus;
+        console.log('Editing order');
         console.log(order);
-        console.log(id);
-        console.log(order.customer.id);
-       // ApiService.editOrder(id, order)
-        ApiService.createOrder(order)
+/*       ApiService.editOrder(id, order)
             .then((resp) => {
-               // setOrders(orders.filter(o => o.id !== id)); отредактировать строку
-                setMessage('Заявка номер ' + id + ' обновлена');
+               // setOrders(orders.filter(o => o.id !== id)); отредактировать строку в таблице
+               // преобразовать в запросе поле orderStatus в status
+                setMessage('Заявка номер ' + order.id + ' обновлена');
                 handleShowA();
                 setTimeout(() => {
                     handleCloseA();
                 }, 3000);
             });
-        console.log('Заявка обновлена' + id);
+*/
+        setMessage('Заявка номер ' + order.id + ' обновлена');
+        handleShowA();
+        setTimeout(() => {
+            handleCloseA();
+        }, 30000);
     }
 
     function removeOrder(id) {
