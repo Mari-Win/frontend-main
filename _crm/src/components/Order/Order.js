@@ -24,14 +24,11 @@ export default function Order({order, className}) {
     const handleShowDeleteWindow = () => setShowDeleteWindow(true);
 
     const [showEdit, setShowEditWindow] = useState(false);
+    const handleShowEditWindow = () => setShowEditWindow(true);
     const handleCloseEditWindow = () => setShowEditWindow(false);
 
     const {removeOrder} = useContext(ordersContext);
     const {editOrder} = useContext(ordersContext);
-
-    function _handleEditWindow(order) {
-        setShowEditWindow(true);
-    }
 
     return (
         <>
@@ -44,7 +41,7 @@ export default function Order({order, className}) {
                 <td className={b('customer')}>{customer.fullName}</td>
                 <td className={b('status')}>{status}</td>
                 <td className={b('finishStatus')}>{finishStatus}</td>
-                <td className={b('button')}><Button onClick={() => _handleEditWindow(id, order)} variant="outline-dark" size="sm"
+                <td className={b('button')}><Button onClick={handleShowEditWindow} variant="outline-dark" size="sm"
                                                     title="Редактировать запись">Edit</Button></td>
                 <td className={b('button')}><Button onClick={handleShowDeleteWindow} variant="outline-dark" size="sm"
                                                     title="Удалить запись">X</Button></td>
@@ -69,20 +66,7 @@ export default function Order({order, className}) {
                     </Button>
                 </Modal.Footer>
             </Modal>
-
-            <Modal show={showEdit} onHide={handleCloseEditWindow}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Редактировать запись</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <OrderEditForm onEdit={editOrder} order={order} closeModal={handleCloseEditWindow}/>
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleCloseEditWindow}>
-                        Close
-                    </Button>
-                </Modal.Footer>
-            </Modal>
+            <OrderEditForm onEdit={editOrder} order={order} showEdit={showEdit} closeEdit={handleCloseEditWindow} />
         </>
     );
 }

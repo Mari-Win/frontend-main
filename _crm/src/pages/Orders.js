@@ -63,7 +63,7 @@ export default function OrdersPage() {
         handleShowA();
         setTimeout(() => {
             handleCloseA();
-        }, 30000);
+        }, 3000);
     }
 
     function removeOrder(id) {
