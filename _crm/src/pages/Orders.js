@@ -3,6 +3,7 @@ import Orders from '../components/Orders/Orders';
 import OrdersForm from '../components/OrdersForm';
 import OrdersContext from '../contexts/ordersContext';
 import ApiService from '../api/api-service';
+import FilterForm from "../components/Orders/FilterForm";
 import {Alert} from 'react-bootstrap';
 
 export default function OrdersPage() {
@@ -21,6 +22,20 @@ export default function OrdersPage() {
 
         fetchData();
     }, []);
+
+    function filterOrders(filterData) {
+        async function fetchData() {
+            console.log(filterData.dateFrom);
+            console.log(filterData.dateTo);
+            console.log(filterData.orderStatus);
+            console.log(filterData.search);
+            console.log(filterData);
+            const orders = await ApiService.getFilteredOrders(filterData.dateFrom, filterData.dateTo, filterData.orderStatus, filterData.search);
+            setOrders(orders);
+        }
+
+        fetchData();
+    }
 
     function createOrder(order) {
         ApiService.createOrder(order)
@@ -80,7 +95,10 @@ export default function OrdersPage() {
 
     return (
         <>
+            <h2>Создать заявку</h2>
             <OrdersForm onCreate={createOrder}/>
+            <h2>Фильтр для заявок</h2>
+            <FilterForm onFilter={filterOrders}/>
             <br/>
             <Alert key="1" variant="success" show={showA}>
                 {message}

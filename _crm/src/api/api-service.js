@@ -15,6 +15,10 @@ export class ApiService extends HttpService {
     return this.get('orders');
   }
 
+  getFilteredOrders(dateFrom, dateTo, orderStatus, customerSearchString) {
+    return this.getFiltered('orders', dateFrom, dateTo, orderStatus, customerSearchString);
+  }
+
   createOrder(order) {
     return this.post('orders', order);
   }

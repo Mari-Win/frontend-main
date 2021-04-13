@@ -19,6 +19,11 @@ export class HttpService {
     return this._handleResponse(response);
   }
 
+  async getFiltered(path, dateFrom, dateTo, orderStatus, customerSearchString) {
+    const response = await fetch(`${this.baseApi}/${path}?from=${dateFrom??''}&to=${dateTo??''}&status=${orderStatus??''}&search=${customerSearchString??''}`, { headers: this.baseHeaders });
+    return this._handleResponse(response);
+  }
+
   async post(path, body) {
     const stringifiedData = JSON.stringify(body);
 
