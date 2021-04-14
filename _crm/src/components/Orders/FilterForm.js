@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Button, InputGroup, Form, Row, Col } from 'react-bootstrap';
 
 export default function FilterForm({ onFilter }) {
@@ -29,13 +29,30 @@ export default function FilterForm({ onFilter }) {
 
   return (
     <form onSubmit={handleForm}>
-      <InputGroup className="mb-3" hasValidation>
-        <InputGroup.Prepend>
-          <InputGroup.Text>ФИО клиента</InputGroup.Text>
-        </InputGroup.Prepend>
-        <Form.Control value={search} onChange={event => setSearch(event.target.value)}  placeholder="ФИО клиента" type="text"  />
-      </InputGroup>
-      <Row>
+        <Row>
+            <Col>
+                <InputGroup className="mb-3" hasValidation>
+                    <InputGroup.Prepend>
+                        <InputGroup.Text>ФИО клиента</InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <Form.Control value={search} onChange={event => setSearch(event.target.value)}  placeholder="ФИО клиента" type="text"  />
+                </InputGroup>
+            </Col>
+        <Col lg="3">
+            <InputGroup className="mb-3">
+                <InputGroup.Prepend>
+                    <InputGroup.Text>Статус</InputGroup.Text>
+                </InputGroup.Prepend>
+                <Form.Control as="select" name="status" value={orderStatus}
+                              onChange={event => setStatus(event.target.value)}>
+                    <option value="">--</option>
+                    <option value="Opened">Opened</option>
+                    <option value="Closed">Closed</option>
+                </Form.Control>
+            </InputGroup>
+        </Col>
+        </Row>
+      <Row className="mb-3">
           <Col>
               <InputGroup className="mb-3">
                   <InputGroup.Prepend>
@@ -64,24 +81,11 @@ export default function FilterForm({ onFilter }) {
                     max="2030-04-20" />
             </InputGroup>
           </Col>
-      </Row>
-        <Row>
-            <Col>
-                <InputGroup className="mb-3">
-                    <InputGroup.Prepend>
-                        <InputGroup.Text>Статус</InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <Form.Control as="select" name="status" value={orderStatus}
-                                  onChange={event => setStatus(event.target.value)}>
-                        <option value="">--</option>
-                        <option value="Opened">Opened</option>
-                        <option value="Closed">Closed</option>
-                    </Form.Control>
-                </InputGroup>
-            </Col>
+          <Col lg="3">
+              <Button type="submit" variant="outline-primary" className="mr-2">Фильтровать</Button>
+              <Button variant="outline-primary" onClick={reset}>Очистить</Button>
+          </Col>
         </Row>
-      <Button type="submit" variant="outline-primary">Фильтровать</Button>
-      <Button variant="outline-primary" onClick={reset}>Очистить</Button>
     </form>
   )
 }

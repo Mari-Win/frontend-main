@@ -32,8 +32,8 @@ export default function OrderFormEdit({ onEdit, order, showEdit, closeEdit }) {
     function reset() {
         setId(order.id);
         setVisitDate(order.visitDate);
-        setServiceId(order.service.id);
-        setMasterId(order.master.id);
+        setServiceId((typeof(order.service) !== 'undefined') ? order.service.id : '');
+        setMasterId((typeof(order.master) !== 'undefined') ? order.master.id : '');
         setCustomerId(order.customer.id);
         setOrderStatus(order.status);
         setFinishStatus((order.finishStatus === 'Success') ? 'Success' : 'Failed');

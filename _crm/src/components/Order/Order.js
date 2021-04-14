@@ -13,9 +13,8 @@ export default function Order({order, className}) {
     const {id, createdDate, visitDate, status, finishStatus, master, customer, service} = order;
     const _className = cn(b({status: status}), className);
     let _createdDate = new Date(createdDate);
-    let _visitDate = new Date(visitDate);
+    let _visitDate =(typeof (visitDate) !== 'undefined') ? new Date(visitDate).toDateString()  : '';
     _createdDate = _createdDate.toDateString() + ' ' + _createdDate.toLocaleTimeString();
-    _visitDate = _visitDate.toDateString();
     const _serviceName = (service) ? service.name : '';
     const _masterName = (master) ? master.fullName : '';
 

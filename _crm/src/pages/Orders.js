@@ -8,7 +8,7 @@ import {Alert, Button} from 'react-bootstrap';
 
 export default function OrdersPage() {
     const [orders, setOrders] = useState([]);
-    
+
     const [showAlert, setShowAlert] = useState(false);
     const handleCloseAlert = () => setShowAlert(false);
     const handleShowAlert = () => setShowAlert(true);
@@ -63,17 +63,17 @@ export default function OrdersPage() {
         order.status = order.orderStatus;
         console.log('Editing order');
         console.log(order);
-/*       ApiService.editOrder(id, order)
-            .then((resp) => {
-               // setOrders(orders.filter(o => o.id !== id)); отредактировать строку в таблице
-               // преобразовать в запросе поле orderStatus в status
-                setMessage('Заявка номер ' + order.id + ' обновлена');
-                handleShowA();
-                setTimeout(() => {
-                    handleCloseA();
-                }, 3000);
-            });
-*/
+        /*       ApiService.editOrder(id, order)
+                    .then((resp) => {
+                       // setOrders(orders.filter(o => o.id !== id)); отредактировать строку в таблице
+                       // преобразовать в запросе поле orderStatus в status
+                        setMessage('Заявка номер ' + order.id + ' обновлена');
+                        handleShowA();
+                        setTimeout(() => {
+                            handleCloseA();
+                        }, 3000);
+                    });
+        */
         setMessage('Заявка номер ' + order.id + ' обновлена');
         handleShowAlert();
         setTimeout(() => {
@@ -95,11 +95,10 @@ export default function OrdersPage() {
 
     return (
         <>
-            <Button variant="outline-primary" onClick={handleShowCreateWindow}>Создать новую заявку</Button>
             <OrderFormCreate onCreate={createOrder} showCreate={showCreate} closeCreate={handleCloseCreateWindow}/>
             <h2>Фильтр для заявок</h2>
             <FilterForm onFilter={filterOrders}/>
-            <br/>
+            <Button variant="outline-primary" onClick={handleShowCreateWindow} className="mb-3">Создать новую заявку</Button>
             <Alert key="1" variant="success" show={showAlert}>
                 {message}
             </Alert>

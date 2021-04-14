@@ -48,11 +48,11 @@ export default function OrderFormCreate({onCreate, showCreate, closeCreate}) {
 
     return (
         <Modal show={showCreate} onHide={closeCreate}>
+            <form onSubmit={handleForm}>
             <Modal.Header closeButton>
                 <Modal.Title>Создать новую заявку</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <form onSubmit={handleForm}>
                     <InputGroup className="mb-3" hasValidation>
                         <InputGroup.Prepend>
                             <InputGroup.Text>ФИО клиента</InputGroup.Text>
@@ -106,7 +106,7 @@ export default function OrderFormCreate({onCreate, showCreate, closeCreate}) {
                                 <InputGroup.Prepend>
                                     <InputGroup.Text>Мастер</InputGroup.Text>
                                 </InputGroup.Prepend>
-                                <Form.Control as="select" value={masterId} onChange={event => setMasterId(event.target.value)}>
+                                <Form.Control as="select" value={masterId} onChange={event => setMasterId(event.target.value)} >
                                     <option value="">--</option>
                                     {mastersOrder.map(item => <option value={item.id}>{item.fullName}</option>
                                     )}
@@ -114,12 +114,12 @@ export default function OrderFormCreate({onCreate, showCreate, closeCreate}) {
                             </InputGroup>
                         </Col>
                     </Row>
-                </form>
             </Modal.Body>
             <Modal.Footer>
-                <Button type="submit" variant="primary" onClick={handleForm}>Добавить</Button>
+                <Button type="submit" variant="primary">Добавить</Button>
                 <Button variant="secondary" onClick={closeCreate}>Закрыть</Button>
             </Modal.Footer>
+        </form>
         </Modal>
     )
 }
