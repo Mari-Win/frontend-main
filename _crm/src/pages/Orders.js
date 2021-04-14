@@ -4,15 +4,20 @@ import OrderFormCreate from '../components/Orders/OrderFormCreate';
 import OrdersContext from '../contexts/ordersContext';
 import ApiService from '../api/api-service';
 import FilterForm from "../components/Orders/FilterForm";
-import {Alert} from 'react-bootstrap';
+import {Alert, Button} from 'react-bootstrap';
 
 export default function OrdersPage() {
     const [orders, setOrders] = useState([]);
-    const [showA, setShowA] = useState(false);
+    
+    const [showAlert, setShowAlert] = useState(false);
+    const handleCloseAlert = () => setShowAlert(false);
+    const handleShowAlert = () => setShowAlert(true);
+
     const [message, setMessage] = useState('');
 
-    const handleCloseA = () => setShowA(false);
-    const handleShowA = () => setShowA(true);
+    const [showCreate, setShowCreateWindow] = useState(false);
+    const handleShowCreateWindow = () => setShowCreateWindow(true);
+    const handleCloseCreateWindow = () => setShowCreateWindow(false);
 
     useEffect(() => {
         async function fetchData() {
@@ -47,9 +52,9 @@ export default function OrdersPage() {
                     finishStatus: resp.finishStatus
                 }]));
                 setMessage('Заявка успешно создана');
-                handleShowA();
+                handleShowAlert();
                 setTimeout(() => {
-                    handleCloseA();
+                    handleCloseAlert();
                 }, 3000);
             });
     }
@@ -70,9 +75,9 @@ export default function OrdersPage() {
             });
 */
         setMessage('Заявка номер ' + order.id + ' обновлена');
-        handleShowA();
+        handleShowAlert();
         setTimeout(() => {
-            handleCloseA();
+            handleCloseAlert();
         }, 3000);
     }
 
@@ -81,21 +86,21 @@ export default function OrdersPage() {
             .then((resp) => {
                 setOrders(orders.filter(o => o.id !== id));
                 setMessage(resp.message);
-                handleShowA();
+                handleShowAlert();
                 setTimeout(() => {
-                    handleCloseA();
+                    handleCloseAlert();
                 }, 3000);
             });
     }
 
     return (
         <>
-            <h2>Создать заявку</h2>
-            <OrderFormCreate onCreate={createOrder}/>
+            <Button variant="outline-primary" onClick={handleShowCreateWindow}>Создать новую заявку</Button>
+            <OrderFormCreate onCreate={createOrder} showCreate={showCreate} closeCreate={handleCloseCreateWindow}/>
             <h2>Фильтр для заявок</h2>
             <FilterForm onFilter={filterOrders}/>
             <br/>
-            <Alert key="1" variant="success" show={showA}>
+            <Alert key="1" variant="success" show={showAlert}>
                 {message}
             </Alert>
             <OrdersContext.Provider value={{removeOrder, editOrder}}>

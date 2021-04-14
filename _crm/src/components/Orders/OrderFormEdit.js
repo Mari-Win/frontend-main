@@ -162,7 +162,7 @@ export default function OrderFormEdit({ onEdit, order, showEdit, closeEdit }) {
                     Сохранить
                 </Button>
                 <Button variant="secondary" onClick={closeEdit}>
-                    Close
+                    Закрыть
                 </Button>
             </Modal.Footer>
         </Modal>
