@@ -25,11 +25,6 @@ export default function OrdersPage() {
 
     function filterOrders(filterData) {
         async function fetchData() {
-            console.log(filterData.dateFrom);
-            console.log(filterData.dateTo);
-            console.log(filterData.orderStatus);
-            console.log(filterData.search);
-            console.log(filterData);
             const orders = await ApiService.getFilteredOrders(filterData.dateFrom, filterData.dateTo, filterData.orderStatus, filterData.search);
             setOrders(orders);
         }

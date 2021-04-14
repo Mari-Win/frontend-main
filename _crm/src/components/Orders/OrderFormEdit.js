@@ -1,4 +1,4 @@
-import {useState, useEffect, useContext} from 'react';
+import {useState, useEffect} from 'react';
 import {InputGroup, Form, Row, Col, Button, Modal} from 'react-bootstrap';
 import ApiService from '../../api/api-service';
 
@@ -15,8 +15,6 @@ export default function OrderFormEdit({ onEdit, order, showEdit, closeEdit }) {
     const [customersOrder, setCustomers] = useState([]);
 
     useEffect(() => {
-        console.log(order);
-
         async function fetchData() {
             const mastersOrder = await ApiService.getMasters();
             const servicesOrder = await ApiService.getSaloonServices();
