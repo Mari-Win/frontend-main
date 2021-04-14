@@ -5,7 +5,7 @@ import Table from 'react-bootstrap/Table';
 
 const b = bem('Orders');
 
-export default function Orders({ orders }) {    
+export default function Orders({ orders, setOrderForEdit }) {
     return (
         <div className={b()}>
             <Table striped bordered hover size="sm">
@@ -24,7 +24,7 @@ export default function Orders({ orders }) {
                     </tr>
                 </thead>
                 <tbody>
-                    {orders.map(item => <Order className={b('item')} key={item.id} order={item} />                        
+                    {orders.map(item => <Order className={b('item')} setOrderForEdit={setOrderForEdit} key={item.id} order={item} />
                     )}</tbody>
             </Table>
         </div>

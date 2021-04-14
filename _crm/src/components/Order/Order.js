@@ -5,15 +5,14 @@ import {Button, Modal} from 'react-bootstrap';
 import './Order.scss';
 
 import ordersContext from '../../contexts/ordersContext';
-import OrderFormEdit from "../Orders/OrderFormEdit";
 
 const b = bem('Order');
 
-export default function Order({order, className}) {
+export default function Order({order, className, setOrderForEdit}) {
     const {id, createdDate, visitDate, status, finishStatus, master, customer, service} = order;
     const _className = cn(b({status: status}), className);
     let _createdDate = new Date(createdDate);
-    let _visitDate =(typeof (visitDate) !== 'undefined') ? new Date(visitDate).toDateString()  : '';
+    let _visitDate = (typeof (visitDate) !== 'undefined') ? new Date(visitDate).toDateString()  : '';
     _createdDate = _createdDate.toDateString() + ' ' + _createdDate.toLocaleTimeString();
     const _serviceName = (service) ? service.name : '';
     const _masterName = (master) ? master.fullName : '';
@@ -22,12 +21,11 @@ export default function Order({order, className}) {
     const handleCloseDeleteWindow = () => setShowDeleteWindow(false);
     const handleShowDeleteWindow = () => setShowDeleteWindow(true);
 
-    const [showEdit, setShowEditWindow] = useState(false);
-    const handleShowEditWindow = () => setShowEditWindow(true);
-    const handleCloseEditWindow = () => setShowEditWindow(false);
-
     const {removeOrder} = useContext(ordersContext);
-    const {editOrder} = useContext(ordersContext);
+    const handleRemoveOrder = () => removeOrder(id);
+
+    const handleEditForm = () => setOrderForEdit(order);
+
 
     return (
         <>
@@ -40,7 +38,7 @@ export default function Order({order, className}) {
                 <td className={b('customer')}>{customer.fullName}</td>
                 <td className={b('status')}>{status}</td>
                 <td className={b('finishStatus')}>{finishStatus}</td>
-                <td className={b('button')}><Button onClick={handleShowEditWindow} variant="outline-dark" size="sm"
+                <td className={b('button')}><Button onClick={handleEditForm} variant="outline-dark" size="sm"
                                                     title="Редактировать запись">Edit</Button></td>
                 <td className={b('button')}><Button onClick={handleShowDeleteWindow} variant="outline-dark" size="sm"
                                                     title="Удалить запись">X</Button></td>
@@ -60,12 +58,11 @@ export default function Order({order, className}) {
                     <Button variant="secondary" onClick={handleCloseDeleteWindow}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={() => removeOrder(id)}>
+                    <Button variant="primary" onClick={handleRemoveOrder}>
                         Удалить
                     </Button>
                 </Modal.Footer>
             </Modal>
-            <OrderFormEdit onEdit={editOrder} order={order} showEdit={showEdit} closeEdit={handleCloseEditWindow} />
         </>
     );
 }

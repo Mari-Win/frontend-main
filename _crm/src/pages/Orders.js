@@ -5,6 +5,7 @@ import OrdersContext from '../contexts/ordersContext';
 import ApiService from '../api/api-service';
 import FilterForm from "../components/Orders/FilterForm";
 import {Alert, Button} from 'react-bootstrap';
+import OrderFormEdit from "../components/Orders/OrderFormEdit";
 
 export default function OrdersPage() {
     const [orders, setOrders] = useState([]);
@@ -18,6 +19,20 @@ export default function OrdersPage() {
     const [showCreate, setShowCreateWindow] = useState(false);
     const handleShowCreateWindow = () => setShowCreateWindow(true);
     const handleCloseCreateWindow = () => setShowCreateWindow(false);
+
+    const [showEdit, setShowEditWindow] = useState(false);
+    const handleShowEditWindow = () => setShowEditWindow(true);
+    const handleCloseEditWindow = () => {
+        setShowEditWindow(false);
+        setSelectedOrder();
+    };
+
+    const [selectedOrder, setSelectedOrder] = useState('');
+
+    function handleEditSelectedOrder(order) {
+        setSelectedOrder(order);
+        handleShowEditWindow();
+    }
 
     useEffect(() => {
         async function fetchData() {
@@ -102,9 +117,10 @@ export default function OrdersPage() {
             <Alert key="1" variant="success" show={showAlert}>
                 {message}
             </Alert>
-            <OrdersContext.Provider value={{removeOrder, editOrder}}>
-                {orders.length === 0 ? <p>Нет данных</p> : <Orders orders={orders}/>}
+            <OrdersContext.Provider value={{removeOrder}}>
+                {orders.length === 0 ? <p>Нет данных</p> : <Orders orders={orders} setOrderForEdit={handleEditSelectedOrder}/>}
             </OrdersContext.Provider>
+            <OrderFormEdit onEdit={editOrder} order={selectedOrder} showEdit={showEdit} closeEdit={handleCloseEditWindow} />
         </>
     );
 }

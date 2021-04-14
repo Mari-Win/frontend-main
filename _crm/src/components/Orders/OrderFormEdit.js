@@ -34,7 +34,7 @@ export default function OrderFormEdit({ onEdit, order, showEdit, closeEdit }) {
         setVisitDate(order.visitDate);
         setServiceId((typeof(order.service) !== 'undefined') ? order.service.id : '');
         setMasterId((typeof(order.master) !== 'undefined') ? order.master.id : '');
-        setCustomerId(order.customer.id);
+        setCustomerId((typeof(order.customer) !== 'undefined') ? order.customer.id : '');
         setOrderStatus(order.status);
         setFinishStatus((order.finishStatus === 'Success') ? 'Success' : 'Failed');
     }
@@ -58,7 +58,7 @@ export default function OrderFormEdit({ onEdit, order, showEdit, closeEdit }) {
     }
 
     return (
-        <Modal show={showEdit} onHide={closeEdit}>
+        <Modal show={showEdit} onHide={closeEdit} onShow={reset}>
             <Modal.Header closeButton>
                 <Modal.Title>Редактировать запись</Modal.Title>
             </Modal.Header>
