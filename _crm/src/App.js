@@ -8,7 +8,7 @@ import OrdersPage from './pages/Orders';
 import NotFoundPage from './pages/NotFound';
 import LoginPage from './pages/Login';
 import { AuthProvider } from './contexts/authContext';
-import PrivateRoute from './components/PrivateRoute';
+import PrivateRoute, { LoginRoute } from './components/PrivateRoute';
 
 function App() {
   return (
@@ -34,9 +34,9 @@ function App() {
                   <OrdersPage />
                 </PrivateRoute>
 
-                <Route path="/login">
+                <LoginRoute path="/login">
                   <LoginPage />
-                </Route>
+                </LoginRoute>
 
                 <Route path="*">
                   <NotFoundPage />
