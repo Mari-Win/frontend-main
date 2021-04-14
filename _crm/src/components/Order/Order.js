@@ -5,7 +5,7 @@ import {Button, Modal} from 'react-bootstrap';
 import './Order.scss';
 
 import ordersContext from '../../contexts/ordersContext';
-import OrderEditForm from "./OrderEditForm";
+import OrderFormEdit from "../Orders/OrderFormEdit";
 
 const b = bem('Order');
 
@@ -66,7 +66,7 @@ export default function Order({order, className}) {
                     </Button>
                 </Modal.Footer>
             </Modal>
-            <OrderEditForm onEdit={editOrder} order={order} showEdit={showEdit} closeEdit={handleCloseEditWindow} />
+            <OrderFormEdit onEdit={editOrder} order={order} showEdit={showEdit} closeEdit={handleCloseEditWindow} />
         </>
     );
 }

@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import Orders from '../components/Orders/Orders';
-import OrdersForm from '../components/OrdersForm';
+import OrderFormCreate from '../components/Orders/OrderFormCreate';
 import OrdersContext from '../contexts/ordersContext';
 import ApiService from '../api/api-service';
 import FilterForm from "../components/Orders/FilterForm";
@@ -96,7 +96,7 @@ export default function OrdersPage() {
     return (
         <>
             <h2>Создать заявку</h2>
-            <OrdersForm onCreate={createOrder}/>
+            <OrderFormCreate onCreate={createOrder}/>
             <h2>Фильтр для заявок</h2>
             <FilterForm onFilter={filterOrders}/>
             <br/>

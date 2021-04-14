@@ -2,7 +2,7 @@ import {useState, useEffect, useContext} from 'react';
 import {InputGroup, Form, Row, Col, Button, Modal} from 'react-bootstrap';
 import ApiService from '../../api/api-service';
 
-export default function OrderEditForm({ onEdit, order, showEdit, closeEdit }) {
+export default function OrderFormEdit({ onEdit, order, showEdit, closeEdit }) {
     const [id, setId] = useState();
     const [visitDate, setVisitDate] = useState();
     const [orderStatus, setOrderStatus] = useState();
