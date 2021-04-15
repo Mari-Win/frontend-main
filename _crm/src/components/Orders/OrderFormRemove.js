@@ -8,8 +8,6 @@ export default function OrderFormRemove({ onRemove, order, showRemove, closeRemo
     const _customerName = (customer) ? customer.fullName : '';
 
     function handleForm(event) {
-        console.log('OrderFormRemove')
-        console.log(order)
         event.preventDefault();
 
         onRemove(id);
@@ -28,11 +26,11 @@ export default function OrderFormRemove({ onRemove, order, showRemove, closeRemo
                 Клиент: {_customerName}
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="secondary" onClick={closeRemove}>
-                    Close
-                </Button>
                 <Button variant="primary" onClick={handleForm}>
                     Удалить
+                </Button>
+                <Button variant="secondary" onClick={closeRemove}>
+                    Закрыть
                 </Button>
             </Modal.Footer>
         </Modal>

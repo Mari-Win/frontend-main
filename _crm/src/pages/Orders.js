@@ -25,7 +25,6 @@ export default function OrdersPage() {
     const [showEdit, setShowEditWindow] = useState(false);
     const handleShowEditWindow = () => setShowEditWindow(true);
     const handleCloseEditWindow = () => {
-        console.log('handleCloseEditWindow')
         setShowEditWindow(false);
     };
 
@@ -39,7 +38,6 @@ export default function OrdersPage() {
     const [showRemove, setShowRemoveWindow] = useState(false);
     const handleShowRemoveWindow = () => setShowRemoveWindow(true);
     const handleCloseRemoveWindow = () => {
-        console.log('handleCloseRemoveWindow')
         setShowRemoveWindow(false);
     };
 
