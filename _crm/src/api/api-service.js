@@ -11,12 +11,32 @@ export class ApiService extends HttpService {
     return this.get('staff');
   }
 
-  getSaloonServices() {
-    return this.get('services');
+  getOrders() {
+    return this.get('orders');
+  }
+
+  getFilteredOrders(dateFrom, dateTo, orderStatus, customerSearchString) {
+    return this.getFiltered('orders', dateFrom, dateTo, orderStatus, customerSearchString);
   }
 
   createOrder(order) {
     return this.post('orders', order);
+  }
+
+  editOrder(orderId, order) {
+    return this.patch('orders', orderId, order);
+  }
+
+  deleteOrder(orderId) {
+    return this.delete('orders', orderId);
+  }
+
+  getSaloonServices() {
+    return this.get('services');
+  }
+
+  getCustomers() {
+    return this.get('customers');
   }
 
   login(authData) {

@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import bem from 'easy-bem';
 import cn from 'classnames';
-import { Button, InputGroup, FormControl, Card } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import './Master.scss';
 
 import mastersContext from '../../contexts/mastersContext';

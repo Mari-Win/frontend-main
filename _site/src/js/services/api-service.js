@@ -16,7 +16,7 @@ export class ApiService extends HttpService {
     }
 
     createOrder(order) {
-        return this.post('orders',order);
+        return this.post('orders',order);        
     }
 }
 

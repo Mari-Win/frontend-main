@@ -34,7 +34,6 @@ function AuthProvider(props) {
   }
 
   PubSub.on('logout', () => {
-    console.log('logout');
     logout();
   });
 

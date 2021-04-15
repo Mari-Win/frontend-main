@@ -4,10 +4,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import HomePage from './pages/Home';
 import MastersPage from './pages/Masters';
+import OrdersPage from './pages/Orders';
 import NotFoundPage from './pages/NotFound';
 import LoginPage from './pages/Login';
 import { AuthProvider } from './contexts/authContext';
-import PrivateRoute from './components/PrivateRoute';
+import PrivateRoute, { LoginRoute } from './components/PrivateRoute';
 
 function App() {
   return (
@@ -29,9 +30,13 @@ function App() {
                   <MastersPage />
                 </PrivateRoute>
 
-                <Route path="/login">
+                <PrivateRoute path="/orders">
+                  <OrdersPage />
+                </PrivateRoute>
+
+                <LoginRoute path="/login">
                   <LoginPage />
-                </Route>
+                </LoginRoute>
 
                 <Route path="*">
                   <NotFoundPage />
