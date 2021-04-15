@@ -1,11 +1,11 @@
 import {useEffect, useState} from 'react';
 import Orders from '../components/Orders/Orders';
 import OrderFormCreate from '../components/Orders/OrderFormCreate';
-import OrdersContext from '../contexts/ordersContext';
 import ApiService from '../api/api-service';
 import FilterForm from "../components/Orders/FilterForm";
 import {Alert, Button} from 'react-bootstrap';
 import OrderFormEdit from "../components/Orders/OrderFormEdit";
+import OrderFormRemove from "../components/Orders/OrderFormRemove";
 
 export default function OrdersPage() {
     const [orders, setOrders] = useState([]);
@@ -20,18 +20,32 @@ export default function OrdersPage() {
     const handleShowCreateWindow = () => setShowCreateWindow(true);
     const handleCloseCreateWindow = () => setShowCreateWindow(false);
 
+    const [selectedOrderForEdit, setSelectedOrderForEdit] = useState('');
+
     const [showEdit, setShowEditWindow] = useState(false);
     const handleShowEditWindow = () => setShowEditWindow(true);
     const handleCloseEditWindow = () => {
+        console.log('handleCloseEditWindow')
         setShowEditWindow(false);
-        setSelectedOrder();
     };
 
-    const [selectedOrder, setSelectedOrder] = useState('');
-
     function handleEditSelectedOrder(order) {
-        setSelectedOrder(order);
+        setSelectedOrderForEdit(order);
         handleShowEditWindow();
+    }
+
+    const [selectedOrderForRemove, setSelectedOrderForRemove] = useState('');
+
+    const [showRemove, setShowRemoveWindow] = useState(false);
+    const handleShowRemoveWindow = () => setShowRemoveWindow(true);
+    const handleCloseRemoveWindow = () => {
+        console.log('handleCloseRemoveWindow')
+        setShowRemoveWindow(false);
+    };
+
+    function handleRemoveSelectedOrder(order) {
+        setSelectedOrderForRemove(order);
+        handleShowRemoveWindow();
     }
 
     useEffect(() => {
@@ -78,17 +92,18 @@ export default function OrdersPage() {
         order.status = order.orderStatus;
         console.log('Editing order');
         console.log(order);
-        /*       ApiService.editOrder(id, order)
-                    .then((resp) => {
-                       // setOrders(orders.filter(o => o.id !== id)); отредактировать строку в таблице
-                       // преобразовать в запросе поле orderStatus в status
-                        setMessage('Заявка номер ' + order.id + ' обновлена');
-                        handleShowA();
-                        setTimeout(() => {
-                            handleCloseA();
-                        }, 3000);
-                    });
-        */
+/*
+        ApiService.editOrder(order.id, order)
+            .then((resp) => {
+                // setOrders(orders.filter(o => o.id !== id)); отредактировать строку в таблице
+                // преобразовать в запросе поле orderStatus в status
+                showAlertOnEdit(order);
+            });
+*/
+        showAlertOnEdit(order);
+    }
+
+    function showAlertOnEdit(order) {
         setMessage('Заявка номер ' + order.id + ' обновлена');
         handleShowAlert();
         setTimeout(() => {
@@ -111,16 +126,15 @@ export default function OrdersPage() {
     return (
         <>
             <OrderFormCreate onCreate={createOrder} showCreate={showCreate} closeCreate={handleCloseCreateWindow}/>
+            <OrderFormEdit onEdit={editOrder} order={selectedOrderForEdit} showEdit={showEdit} closeEdit={handleCloseEditWindow} />
+            <OrderFormRemove onRemove={removeOrder} order={selectedOrderForRemove} showRemove={showRemove} closeRemove={handleCloseRemoveWindow} />
             <h2>Фильтр для заявок</h2>
             <FilterForm onFilter={filterOrders}/>
             <Button variant="outline-primary" onClick={handleShowCreateWindow} className="mb-3">Создать новую заявку</Button>
             <Alert key="1" variant="success" show={showAlert}>
                 {message}
             </Alert>
-            <OrdersContext.Provider value={{removeOrder}}>
-                {orders.length === 0 ? <p>Нет данных</p> : <Orders orders={orders} setOrderForEdit={handleEditSelectedOrder}/>}
-            </OrdersContext.Provider>
-            <OrderFormEdit onEdit={editOrder} order={selectedOrder} showEdit={showEdit} closeEdit={handleCloseEditWindow} />
+            {orders.length === 0 ? <p>Нет данных</p> : <Orders orders={orders} setOrderForEdit={handleEditSelectedOrder} setOrderForRemove={handleRemoveSelectedOrder}/>}
         </>
     );
 }
